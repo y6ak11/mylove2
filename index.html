@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لأغلى إنسانة</title>
+
+<style>
+*{box-sizing:border-box;}
+body{margin:0;font-family:'Cairo',sans-serif;overflow:hidden;background:#fef6f9;}
+.page{
+    position:absolute;width:100%;height:100%;
+    display:none;justify-content:center;align-items:center;
+    flex-direction:column;text-align:center;padding:20px;
+    background:linear-gradient(135deg,#fff1f5,#f3f0ff,#eef7ff);
+    background-size:300% 300%;animation:bgMove 20s ease infinite;
+    opacity:0;transform:translateY(50px) scale(0.95);
+    transition:1s ease;
+}
+.page.active{display:flex;opacity:1;transform:translateY(0) scale(1);}
+.page.fade-out{opacity:0;transform:translateY(-50px) scale(0.9);}
+@keyframes bgMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+h2, p{color:#444;margin:5px 0;}
+h2{font-size:clamp(22px,5vw,30px);}
+p{font-size:clamp(18px,4vw,25px);}
+button{
+    padding:14px 36px;margin:12px;border:none;border-radius:40px;
+    font-size:16px;background:rgba(255,255,255,0.75);color:#444;
+    backdrop-filter:blur(12px);cursor:pointer;transition:.4s;
+}
+button:hover{transform:scale(1.08);}
+.big-heart{font-size:clamp(60px,18vw,90px);cursor:pointer;transition:transform 0.2s ease;}
+#typing{
+    font-size:clamp(17px,4.5vw,24px);max-width:95%;color:#222;
+    background:rgba(255,255,255,0.8);padding:22px;border-radius:25px;
+    line-height:2.2;box-shadow:0 15px 40px rgba(0,0,0,0.08);display:none;text-align:right;
+}
+.heart{position:absolute;color:#ff9aa2;font-size:18px;animation:float 10s infinite ease-in;opacity:.4;}
+@keyframes float{0%{transform:translateY(0) scale(.8);opacity:0}50%{opacity:.6}100%{transform:translateY(-1200px) scale(1.5);opacity:0}}
+</style>
+</head>
+<body>
+
+<!-- الصفحة 1 -->
+<div class="page active" id="p1">
+    <h2>هل انتي آية؟ 💗</h2>
+    <button onclick="go('p1','p2')">نعم</button>
+</div>
+
+<!-- الصفحة 2 -->
+<div class="page" id="p2">
+    <h2>هلا آية</h2>
+    <button onclick="go('p2','p3')">هلا يوسف</button>
+</div>
+
+
+<!-- الصفحة 3 -->
+<div class="page" id="p3">
+    <h2>عندي سر خطير إلج ولج</h2>
+    <button onclick="go('p3','p4')">شنو هو السر</button>
+</div>
+
+<!-- صفحة القلب -->
+<div class="page" id="p4">
+    <div class="big-heart" id="heart">❤️</div>
+    <p>اضغطي على القلب حتى ينفجر وتعرفين شنو</p>
+</div>
+
+<!-- صفحة الشعر + تشغيل الأغنية -->
+<div class="page" id="p5">
+    <div id="typing"></div>
+</div>
+
+<!-- صفحة النهاية -->
+<div class="page" id="p6">
+    <h2>أحبج للأبد… وما بعد الأبد 🤍</h2>
+</div>
+
+<!-- الموسيقى -->
+<audio id="music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music=document.getElementById("music");
+
+/* الانتقالات */
+function go(from,to){
+    const f=document.getElementById(from);
+    f.classList.add("fade-out");
+    setTimeout(()=>{
+        f.classList.remove("active","fade-out");
+        document.getElementById(to).classList.add("active");
+    },600);
+}
+
+/* تفاعل القلب */
+let clicks=0;
+const heart=document.getElementById("heart");
+heart.onclick=()=>{
+    clicks++;
+    heart.style.transform=`scale(${1+clicks*0.4})`;
+    if(clicks>=5){
+        heart.style.transition="0.3s ease-out";
+        heart.style.transform="scale(0)";
+        heart.style.opacity="0";
+        setTimeout(()=>{
+            go('p4','p5');
+            startRomantic();
+        },400);
+    }
+};
+
+/* الشعر الرومانسي */
+const poem=`
+
+أحبكِ…
+لأنكِ حين تظهرين
+يهدأ قلبي دون سبب،
+وكأن العالم
+كان ينتظركِ معي.
+
+أحبكِ لأن صوتكِ
+يشبه الأمان،
+ولأن اسمكِ
+حين أنطقه
+أشعر أنني في بيتي.
+
+أحبكِ لأنكِ التفاصيل
+التي لا يراها أحد،
+ولأن وجودكِ
+يجعل الأيام ألطف،
+والتعب أخف،
+وأنا… أسعد.
+
+أحبكِ،
+وسأحبكِ
+حتى آخر نبضة،
+وما بعدها 🤍
+`;
+
+let i=0;
+function startRomantic(){
+    music.play().catch(()=>{});
+    const t=document.getElementById("typing");
+    t.style.display='block';
+    const interval=setInterval(()=>{
+        t.innerHTML+=poem[i];
+        i++;
+        if(i>=poem.length){
+            clearInterval(interval);
+            setTimeout(()=>go('p5','p6'),1500);
+        }
+    },180);
+}
+
+/* قلوب طائرة */
+for(let i=0;i<28;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"%";
+    h.style.bottom="-60px";
+    h.style.animationDuration=(7+Math.random()*6)+"s";
+    document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
