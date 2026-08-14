@@ -1,0 +1,4801 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no,
+      viewport-fit=cover">
+
+<meta name="theme-color" content="#05040b">
+
+<title>لأغلى إنسانة 🤍</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+body{
+
+    overflow:hidden;
+
+    font-family:
+        "Cairo",
+        "Tajawal",
+        Arial,
+        sans-serif;
+
+    background:#04030a;
+
+    color:#fff;
+
+    -webkit-font-smoothing:antialiased;
+
+    touch-action:manipulation;
+
+    perspective:1400px;
+}
+
+
+/* =========================================================
+   STAR SKY
+========================================================= */
+
+.sky{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(108,76,160,.20),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 10% 75%,
+            rgba(211,71,135,.07),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 60%,
+            rgba(72,76,180,.08),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            180deg,
+            #03030a 0%,
+            #070512 35%,
+            #0c0717 70%,
+            #03030a 100%
+        );
+}
+
+
+/* =========================================================
+   AURORA
+========================================================= */
+
+.aurora{
+
+    position:absolute;
+
+    width:140%;
+    height:45%;
+
+    left:-20%;
+    bottom:-12%;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+            rgba(163,80,170,.08),
+            transparent 68%
+        );
+
+    filter:blur(45px);
+
+    animation:
+        auroraMove
+        16s
+        ease-in-out
+        infinite alternate;
+}
+
+
+@keyframes auroraMove{
+
+    from{
+        transform:
+            translateX(-5%)
+            scale(1);
+    }
+
+    to{
+        transform:
+            translateX(5%)
+            scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.star{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    opacity:.3;
+
+    box-shadow:
+        0 0 5px rgba(255,255,255,.8),
+        0 0 12px rgba(220,205,255,.25);
+
+    animation:
+        starTwinkle
+        var(--time)
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes starTwinkle{
+
+    0%{
+        opacity:.12;
+        transform:scale(.55);
+    }
+
+    50%{
+        opacity:.55;
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   SPECIAL STARS
+========================================================= */
+
+.special-star{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 7px white,
+        0 0 20px rgba(220,210,255,.8);
+
+    animation:
+        specialTwinkle
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+.special-star::before,
+.special-star::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(255,255,255,.8),
+            transparent
+        );
+}
+
+
+.special-star::before{
+
+    width:1px;
+    height:25px;
+}
+
+
+.special-star::after{
+
+    width:25px;
+    height:1px;
+}
+
+
+@keyframes specialTwinkle{
+
+    0%,100%{
+        opacity:.25;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+
+/* =========================================================
+   MOON AURA
+========================================================= */
+
+.moon-aura{
+
+    position:fixed;
+
+    z-index:2;
+
+    top:-20px;
+
+    left:50%;
+
+    width:
+        clamp(
+            220px,
+            58vw,
+            330px
+        );
+
+    height:
+        clamp(
+            220px,
+            58vw,
+            330px
+        );
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,226,176,.20),
+            rgba(255,218,170,.08) 35%,
+            transparent 70%
+        );
+
+    filter:blur(18px);
+
+    animation:
+        moonGlow
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes moonGlow{
+
+    0%,100%{
+        opacity:.55;
+        transform:
+            translateX(-50%)
+            scale(.94);
+    }
+
+    50%{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   CRESCENT
+========================================================= */
+
+.moon{
+
+    position:fixed;
+
+    z-index:3;
+
+    top:7%;
+
+    left:50%;
+
+    width:
+        clamp(
+            78px,
+            22vw,
+            125px
+        );
+
+    height:
+        clamp(
+            78px,
+            22vw,
+            125px
+        );
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 32%,
+            #fffef5,
+            #fff2d0 55%,
+            #e8c98f 100%
+        );
+
+    box-shadow:
+
+        0 0 18px rgba(255,245,214,.95),
+
+        0 0 50px rgba(255,220,165,.55),
+
+        0 0 100px rgba(255,200,140,.20);
+
+    animation:
+        moonFloat
+        7s
+        ease-in-out
+        infinite;
+}
+
+
+.moon::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    top:-9px;
+    right:-25px;
+
+    border-radius:50%;
+
+    background:#080511;
+
+}
+
+
+@keyframes moonFloat{
+
+    0%,100%{
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+    50%{
+        transform:
+            translateX(-50%)
+            translateY(-7px);
+    }
+}
+
+
+
+/* =========================================================
+   ROMANTIC CINEMATIC POEM — ULTRA
+   ========================================================= */
+
+/* The poem scene is initially untouched. */
+.moon{
+    transform-origin:50% 50%;
+}
+
+/* A soft halo trails the moon while it descends. */
+.moon::before{
+    content:"";
+    position:absolute;
+    inset:-55%;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,244,210,.24) 0%,
+            rgba(255,210,160,.11) 30%,
+            rgba(255,180,150,.035) 53%,
+            transparent 72%
+        );
+    filter:blur(12px);
+    opacity:.65;
+    pointer-events:none;
+    transform:scale(.86);
+    transition:
+        opacity 3.5s ease,
+        transform 4.5s cubic-bezier(.16,1,.3,1);
+}
+
+/* Cinematic descent + elegant crescent transformation. */
+body.poem-moon .moon{
+    animation:romanticMoonDescent 5.2s cubic-bezier(.16,1,.3,1) forwards;
+    filter:
+        drop-shadow(0 0 15px rgba(255,248,220,.9))
+        drop-shadow(0 0 38px rgba(255,215,165,.45))
+        drop-shadow(0 0 90px rgba(255,185,150,.18));
+}
+
+body.poem-moon .moon::before{
+    opacity:.9;
+    transform:scale(1.08);
+}
+
+body.poem-moon .moon::after{
+    opacity:1;
+    top:-9px;
+    right:-25px;
+    transform:scale(1.02);
+    transition:
+        opacity 2.4s ease 1.15s,
+        transform 3.6s cubic-bezier(.16,1,.3,1) 1.15s;
+}
+
+@keyframes romanticMoonDescent{
+    0%{
+        top:7%;
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1)
+            rotate(0deg);
+    }
+    18%{
+        transform:
+            translateX(-50%)
+            translateY(4px)
+            scale(.98)
+            rotate(-1deg);
+    }
+    48%{
+        top:35%;
+        transform:
+            translateX(-50%)
+            translateY(-2px)
+            scale(.88)
+            rotate(-3deg);
+    }
+    74%{
+        top:55%;
+        transform:
+            translateX(-50%)
+            translateY(2px)
+            scale(.78)
+            rotate(-5deg);
+    }
+    100%{
+        top:68%;
+        transform:
+            translateX(-50%)
+            translateY(-50%)
+            scale(.70)
+            rotate(-7deg);
+    }
+}
+
+/* =========================================================
+   ROMANTIC PARTICLES
+   ========================================================= */
+
+body.poem-moon::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    opacity:0;
+    background:
+        radial-gradient(circle at 18% 70%, rgba(255,220,190,.16) 0 1px, transparent 2px),
+        radial-gradient(circle at 73% 58%, rgba(255,240,215,.13) 0 1px, transparent 2px),
+        radial-gradient(circle at 42% 82%, rgba(255,210,190,.12) 0 1px, transparent 2px),
+        radial-gradient(circle at 84% 30%, rgba(255,245,220,.13) 0 1px, transparent 2px);
+    background-size:130px 170px, 190px 210px, 160px 190px, 220px 230px;
+    animation:
+        romanticParticles 7s ease-in-out forwards,
+        romanticParticlesDrift 12s linear infinite;
+}
+
+@keyframes romanticParticles{
+    0%{opacity:0;transform:scale(.94);}
+    30%{opacity:.72;}
+    100%{opacity:.38;transform:scale(1.03);}
+}
+
+@keyframes romanticParticlesDrift{
+    0%{background-position:0 0, 0 0, 0 0, 0 0;}
+    50%{background-position:18px -28px, -24px -20px, 14px -35px, -18px -24px;}
+    100%{background-position:36px -56px, -48px -40px, 28px -70px, -36px -48px;}
+}
+
+/* A subtle warm vignette makes the poem feel intimate. */
+body.poem-moon::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background:
+        radial-gradient(
+            ellipse at 50% 58%,
+            transparent 22%,
+            rgba(8,5,17,.10) 55%,
+            rgba(3,2,9,.42) 100%
+        );
+    opacity:0;
+    animation:romanticVignette 5s ease forwards;
+}
+
+@keyframes romanticVignette{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* =========================================================
+   HEART REPLACEMENT — NO EXPLOSION
+   ========================================================= */
+
+/*
+   Instead of an exploding heart, the scene now uses a
+   gentle "heart bloom": a small heart appears, breathes,
+   releases a few glowing particles, and fades softly.
+*/
+.heart{
+    animation:none !important;
+    transform-origin:center;
+}
+
+body.poem-moon .heart{
+    animation:
+        heartBloom 3.8s cubic-bezier(.16,1,.3,1) forwards,
+        heartBreath 2.8s ease-in-out 3.8s infinite !important;
+}
+
+@keyframes heartBloom{
+    0%{
+        opacity:0;
+        transform:translateY(20px) scale(.35) rotate(-8deg);
+        filter:blur(5px);
+    }
+    38%{
+        opacity:1;
+        transform:translateY(0) scale(1.08) rotate(2deg);
+        filter:blur(0);
+    }
+    62%{
+        transform:translateY(-3px) scale(.94) rotate(-1deg);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1) rotate(0);
+        filter:
+            drop-shadow(0 0 10px rgba(255,190,190,.6))
+            drop-shadow(0 0 28px rgba(255,150,170,.22));
+    }
+}
+
+@keyframes heartBreath{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.045);
+    }
+}
+
+/* Soft heart-like glow around the existing heart, not an explosion. */
+.heart::before{
+    content:"";
+    position:absolute;
+    inset:-28px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(255,180,195,.18),
+        rgba(255,150,180,.05) 42%,
+        transparent 72%
+    );
+    opacity:0;
+    transform:scale(.6);
+    pointer-events:none;
+}
+
+body.poem-moon .heart::before{
+    animation:
+        heartAura 4.2s ease forwards,
+        heartAuraBreath 3s ease-in-out 4.2s infinite;
+}
+
+@keyframes heartAura{
+    0%{opacity:0;transform:scale(.6);}
+    45%{opacity:.9;transform:scale(1);}
+    100%{opacity:.58;transform:scale(1.12);}
+}
+
+@keyframes heartAuraBreath{
+    0%,100%{transform:scale(1.12);}
+    50%{transform:scale(1.2);}
+}
+
+/* =========================================================
+   POEM TRANSITION — SOFT CINEMATIC REVEAL
+   ========================================================= */
+
+body.poem-moon #typing{
+    animation:
+        poemArrival 2.8s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes poemArrival{
+    0%{
+        opacity:0;
+        transform:translateY(18px);
+        filter:blur(8px);
+    }
+    55%{
+        opacity:.7;
+        filter:blur(2px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+        filter:blur(0);
+    }
+}
+
+/* Let the cursor feel like a soft candle rather than a harsh blink. */
+body.poem-moon #cursor{
+    animation:
+        romanticCursor 1.35s ease-in-out infinite;
+}
+
+@keyframes romanticCursor{
+    0%,100%{opacity:.25;}
+    50%{opacity:1;}
+}
+
+/* =========================================================
+   RESPONSIVE CINEMATIC VERSION
+   ========================================================= */
+
+@media(max-height:700px){
+    @keyframes romanticMoonDescent{
+        0%{
+            top:5%;
+            transform:translateX(-50%) scale(.9) rotate(0);
+        }
+        45%{
+            top:38%;
+            transform:translateX(-50%) scale(.76) rotate(-4deg);
+        }
+        100%{
+            top:66%;
+            transform:translateX(-50%) translateY(-50%) scale(.60) rotate(-7deg);
+        }
+    }
+}
+
+/* =========================================================
+   METEORS
+========================================================= */
+
+.meteor{
+
+    position:fixed;
+
+    z-index:4;
+
+    top:-10%;
+
+    left:-15%;
+
+    width:var(--length);
+
+    height:2px;
+
+    border-radius:50%;
+
+    opacity:0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,220,180,.2),
+            rgba(255,245,225,.95)
+        );
+
+    box-shadow:
+        0 0 8px rgba(255,220,180,.8),
+        0 0 18px rgba(255,170,120,.25);
+
+    transform:rotate(32deg);
+
+    animation:
+        meteor
+        var(--duration)
+        linear
+        infinite;
+
+}
+
+
+@keyframes meteor{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(-20vw,-20vh)
+            rotate(32deg);
+    }
+
+    5%{
+        opacity:1;
+    }
+
+    32%{
+
+        opacity:1;
+
+        transform:
+            translate(75vw,70vh)
+            rotate(32deg);
+    }
+
+    36%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    min-height:100dvh;
+
+    z-index:10;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:
+        max(25px,env(safe-area-inset-top))
+        22px
+        max(25px,env(safe-area-inset-bottom))
+        22px;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transform-style:preserve-3d;
+
+    transform-origin:center 70%;
+
+    transform:
+        scale(1.02)
+        rotateX(2deg)
+        translateY(8px);
+
+    filter:blur(8px);
+
+    transition:
+
+        opacity
+        1.3s
+        cubic-bezier(.4,0,.2,1),
+
+        transform
+        1.4s
+        cubic-bezier(.4,0,.2,1),
+
+        filter
+        1.3s
+        cubic-bezier(.4,0,.2,1);
+}
+
+
+.page.active{
+
+    display:flex;
+
+    opacity:1;
+
+    transform:
+        scale(1)
+        rotateX(0deg)
+        translateY(0);
+
+    filter:blur(0);
+}
+
+
+.page.fade-out{
+
+    opacity:0;
+
+    transform:
+        scale(.985)
+        rotateX(-2deg)
+        translateY(-8px);
+
+    filter:blur(9px);
+}
+
+
+/* =========================================================
+   PAGE INNER LIGHT
+========================================================= */
+
+.page::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(255,255,255,.025),
+            transparent 42%
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content{
+
+    position:relative;
+
+    z-index:20;
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* =========================================================
+   PROGRESS DOTS
+========================================================= */
+
+.progress{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:
+        max(16px,env(safe-area-inset-bottom));
+
+    transform:translateX(-50%);
+
+    z-index:60;
+
+    display:flex;
+
+    gap:9px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    pointer-events:none;
+
+    opacity:.85;
+
+    transition:
+        opacity .4s ease;
+}
+
+
+.progress .dot{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.28);
+
+    transition:
+        all .5s
+        cubic-bezier(.22,1,.36,1);
+}
+
+
+.progress .dot.on{
+
+    width:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffd8e8,
+            #ff9ec8
+        );
+
+    box-shadow:
+        0 0 10px rgba(255,140,190,.7);
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h2{
+
+    margin:10px 0;
+
+    max-width:92%;
+
+    font-size:
+        clamp(
+            24px,
+            7vw,
+            36px
+        );
+
+    line-height:1.8;
+
+    font-weight:600;
+
+    color:#fff;
+
+    text-shadow:
+        0 4px 30px rgba(255,150,200,.25);
+
+    animation:
+        gentleText
+        4s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes gentleText{
+
+    0%,100%{
+        text-shadow:
+            0 4px 30px
+            rgba(255,150,200,.18);
+    }
+
+    50%{
+        text-shadow:
+            0 4px 40px
+            rgba(255,150,200,.38);
+    }
+}
+
+
+p{
+
+    max-width:90%;
+
+    margin:12px 0;
+
+    font-size:
+        clamp(
+            17px,
+            4.6vw,
+            23px
+        );
+
+    line-height:2;
+
+    color:
+        rgba(255,245,250,.9);
+}
+
+
+/* =========================================================
+   RANDOM CARD
+========================================================= */
+
+.random-love{
+
+    position:relative;
+
+    width:min(92%,450px);
+
+    min-height:90px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px 20px;
+
+    margin:12px 0;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(255,120,180,.035)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.3),
+
+        inset 0 1px 0
+        rgba(255,255,255,.08);
+
+    color:
+        rgba(255,245,250,.95);
+
+    font-size:
+        clamp(
+            14px,
+            4vw,
+            18px
+        );
+
+    line-height:1.9;
+
+    animation:
+        cardAppear
+        1.5s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+.random-love::before{
+
+    content:"♡";
+
+    position:absolute;
+
+    top:-17px;
+
+    right:20px;
+
+    font-size:29px;
+
+    color:
+        rgba(255,170,205,.7);
+}
+
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.90);
+
+        filter:blur(9px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1);
+
+        filter:blur(0);
+    }
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+button{
+
+    position:relative;
+
+    z-index:30;
+
+    min-width:140px;
+
+    padding:
+        15px 40px;
+
+    margin:15px;
+
+    border-radius:50px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.11),
+            rgba(255,100,165,.07)
+        );
+
+    color:white;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+
+        0 15px 45px
+        rgba(0,0,0,.3),
+
+        inset 0 1px 0
+        rgba(255,255,255,.08);
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+
+button::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    background:
+        radial-gradient(
+            circle at var(--mx,50%) var(--my,50%),
+            rgba(255,255,255,.35),
+            transparent 45%
+        );
+
+    opacity:0;
+
+    transition:opacity .4s ease;
+
+    pointer-events:none;
+}
+
+
+button:hover::after{
+    opacity:1;
+}
+
+
+button:hover{
+
+    transform:
+        scale(1.06);
+
+    background:
+        rgba(255,100,165,.12);
+
+    box-shadow:
+        0 20px 55px
+        rgba(255,80,150,.15);
+}
+
+
+button:active{
+
+    transform:
+        scale(.92);
+}
+
+
+/* =========================================================
+   HEART
+========================================================= */
+
+.big-heart{
+
+    position:relative;
+
+    z-index:30;
+
+    font-size:
+        clamp(
+            82px,
+            25vw,
+            125px
+        );
+
+    cursor:pointer;
+
+    user-select:none;
+
+    filter:
+        drop-shadow(
+            0 15px 35px
+            rgba(255,40,120,.3)
+        );
+
+    animation:
+        heartbeat
+        1.8s
+        ease-in-out
+        infinite;
+
+    transition:
+        .6s
+        cubic-bezier(.16,1,.3,1);
+}
+
+
+.big-heart::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,70,150,.08);
+
+    filter:blur(30px);
+
+    z-index:-1;
+
+    animation:
+        heartAura
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.10);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+
+    45%{
+        transform:scale(1.13);
+    }
+
+    60%{
+        transform:scale(1);
+    }
+}
+
+
+@keyframes heartAura{
+
+    0%,100%{
+        opacity:.25;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:.8;
+        transform:scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   POEM
+========================================================= */
+
+#typing{
+    width:min(92%,560px);
+    max-height:55vh;
+    overflow-y:auto;
+    padding:18px 22px;
+    border-radius:18px;
+    text-align:right;
+    white-space:normal;
+    font-size:clamp(15px,4vw,20px);
+    line-height:1.75;
+    letter-spacing:0;
+    word-spacing:0;
+    color:rgba(255,248,252,.97);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,110,170,.035)
+        );
+    border:1px solid rgba(255,255,255,.14);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.08);
+    animation:poemAppear 1.5s cubic-bezier(.16,1,.3,1);
+}
+
+
+#typing::-webkit-scrollbar{
+    display:none;
+}
+
+
+.cursor{
+
+    display:inline-block;
+
+    margin-inline-start:2px;
+
+    color:rgba(255,190,215,.95);
+
+    animation:
+        cursorBlink
+        .85s
+        steps(1)
+        infinite;
+}
+
+
+@keyframes cursorBlink{
+
+    0%,49%{
+        opacity:1;
+    }
+
+    50%,100%{
+        opacity:0;
+    }
+}
+
+
+@keyframes poemAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.91);
+
+        filter:blur(10px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1);
+
+        filter:blur(0);
+    }
+}
+
+
+/* =========================================================
+   FEW HEARTS
+========================================================= */
+
+.heart{
+
+    position:fixed;
+
+    z-index:6;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    animation:
+        floatHeart
+        var(--duration)
+        linear
+        infinite;
+}
+
+
+@keyframes floatHeart{
+
+    0%{
+        transform:
+            translateY(0)
+            scale(.6);
+
+        opacity:0;
+    }
+
+    20%{
+        opacity:.25;
+    }
+
+    55%{
+        opacity:.35;
+
+        transform:
+            translateY(-55vh)
+            translateX(15px)
+            scale(.9);
+    }
+
+    100%{
+
+        transform:
+            translateY(-120vh)
+            translateX(-15px)
+            scale(1.1);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   EXPLOSION
+========================================================= */
+
+.particle{
+
+    position:fixed;
+
+    z-index:100;
+
+    pointer-events:none;
+
+    font-size:
+        var(--size);
+
+    animation:
+        explode
+        1.5s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+@keyframes explode{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+            translate(0,0)
+            scale(.3)
+            rotate(0deg);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(1.5)
+            rotate(60deg);
+    }
+}
+
+
+/* =========================================================
+   FINAL SCREEN
+========================================================= */
+
+.final-content{
+
+    position:relative;
+
+    z-index:40;
+
+    width:min(94%,500px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+
+/* Final ornament */
+
+.final-symbol{
+
+    font-size:25px;
+
+    color:
+        rgba(255,220,235,.8);
+
+    letter-spacing:10px;
+
+    margin-bottom:20px;
+
+    animation:
+        symbolGlow
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes symbolGlow{
+
+    0%,100%{
+        opacity:.4;
+        transform:scale(.95);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.05);
+    }
+}
+
+
+/* =========================================================
+   FINAL TWO LINES
+========================================================= */
+
+#finalMessage{
+
+    width:100%;
+
+    padding:
+        25px 20px;
+
+    border-radius:30px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,120,175,.045)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    backdrop-filter:
+        blur(28px);
+
+    -webkit-backdrop-filter:
+        blur(28px);
+
+    box-shadow:
+
+        0 30px 90px
+        rgba(0,0,0,.42),
+
+        inset 0 1px 0
+        rgba(255,255,255,.09);
+
+    font-size:
+        clamp(
+            17px,
+            4.8vw,
+            23px
+        );
+
+    line-height:2.2;
+
+    color:#fff;
+
+    animation:
+        finalAppear
+        2s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+
+@keyframes finalAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.88);
+
+        filter:blur(12px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1);
+
+        filter:blur(0);
+    }
+}
+
+
+/* =========================================================
+   FINAL SMALL TEXT
+========================================================= */
+
+.final-heart{
+
+    margin-top:25px;
+
+    font-size:27px;
+
+    animation:
+        finalHeart
+        2s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes finalHeart{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-height:700px){
+
+    .moon{
+        top:4%;
+        width:75px;
+        height:75px;
+    }
+
+    .moon-aura{
+        top:-8%;
+    }
+
+    h2{
+        font-size:23px;
+    }
+
+    .big-heart{
+        font-size:78px;
+    }
+
+    button{
+        padding:12px 34px;
+        margin:8px;
+    }
+
+    #typing{
+        max-height:69vh;
+        padding:18px;
+    }
+
+    .random-love{
+        min-height:70px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+    }
+}
+
+
+#letter-hint{
+  margin:12px auto 0;
+  text-align:center;
+  color:rgba(255,235,244,.68);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.6px;
+  opacity:.8;
+}
+
+</style>
+
+
+<style id="romantic-polish">
+/* =========================================================
+   SECRET LETTER — CINEMATIC EDITION
+========================================================= */
+
+#heart{
+  position:relative;
+  width:132px;
+  height:88px;
+  margin:auto;
+  cursor:pointer;
+  isolation:isolate;
+  border-radius:14px;
+  background:
+    linear-gradient(145deg,
+      rgba(255,246,249,.98),
+      rgba(225,193,210,.96));
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.24),
+    0 0 26px rgba(255,188,215,.20);
+  transform:rotate(-1deg);
+  transition:
+    transform .65s cubic-bezier(.16,1,.3,1),
+    box-shadow .65s ease;
+}
+
+/* envelope flap */
+#heart::before{
+  content:"";
+  position:absolute;
+  z-index:3;
+  left:5px;
+  right:5px;
+  top:5px;
+  height:57px;
+  background:
+    linear-gradient(135deg,
+      transparent 49.3%,
+      rgba(255,255,255,.82) 50%,
+      transparent 50.8%),
+    linear-gradient(225deg,
+      transparent 49.3%,
+      rgba(255,255,255,.58) 50%,
+      transparent 50.8%);
+  clip-path:polygon(0 0,50% 63%,100% 0,100% 100%,0 100%);
+  transform-origin:top center;
+  filter:drop-shadow(0 2px 4px rgba(110,50,75,.10));
+}
+
+/* inner letter */
+#heart .letter-paper{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:7px;
+  width:72%;
+  height:62%;
+  transform:translateX(-50%) translateY(20%);
+  border-radius:5px;
+  background:
+    linear-gradient(180deg,#fffdfb,#f8edf1);
+  box-shadow:0 5px 14px rgba(92,46,65,.13);
+  opacity:.82;
+}
+
+/* wax seal */
+#heart::after{
+  content:"✦";
+  position:absolute;
+  z-index:5;
+  left:50%;
+  top:54%;
+  width:30px;
+  height:30px;
+  transform:translate(-50%,-50%);
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#fff8fb;
+  font-size:13px;
+  background:
+    radial-gradient(circle at 35% 30%,
+      #c986a2,
+      #9e5977);
+  box-shadow:
+    0 5px 17px rgba(110,54,78,.24),
+    0 0 20px rgba(255,190,215,.25);
+}
+
+#heart:hover{
+  transform:translateY(-7px) rotate(0deg) scale(1.045);
+  box-shadow:
+    0 24px 58px rgba(0,0,0,.28),
+    0 0 48px rgba(255,190,215,.36);
+}
+
+/* gentle floating */
+#heart:not(.letter-open){
+  animation:letterFloat 4s ease-in-out infinite;
+}
+
+@keyframes letterFloat{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-6px) rotate(1deg)}
+}
+
+/* opening sequence */
+#heart.letter-open{
+  animation:letterOpenCinematic 1.25s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+#heart.letter-open::before{
+  animation:flapOpenCinematic .90s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+#heart.letter-open .letter-paper{
+  animation:paperRise 1.05s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+#heart.letter-open::after{
+  animation:sealFade 1s ease forwards;
+}
+
+@keyframes letterOpenCinematic{
+  0%{
+    transform:translateY(0) rotate(-1deg) scale(1);
+  }
+  25%{
+    transform:translateY(-9px) rotate(1deg) scale(1.06);
+  }
+  55%{
+    transform:translateY(-4px) rotate(-.5deg) scale(1.035);
+  }
+  100%{
+    transform:translateY(0) rotate(0) scale(.94);
+    opacity:.15;
+  }
+}
+
+@keyframes flapOpenCinematic{
+  0%{transform:rotateX(0);opacity:1}
+  50%{transform:rotateX(72deg);opacity:.92}
+  100%{transform:rotateX(120deg);opacity:.18}
+}
+
+@keyframes paperRise{
+  0%{
+    transform:translateX(-50%) translateY(20%);
+    opacity:.82;
+  }
+  45%{
+    transform:translateX(-50%) translateY(-28%);
+    opacity:1;
+  }
+  100%{
+    transform:translateX(-50%) translateY(-58%) scale(1.03);
+    opacity:0;
+    filter:blur(2px);
+  }
+}
+
+@keyframes sealFade{
+  0%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  55%{opacity:.55;transform:translate(-50%,-50%) scale(1.35)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(.25)}
+}
+
+/* atmospheric light when the letter opens */
+.letter-opening-light{
+  position:fixed;
+  z-index:9998;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  pointer-events:none;
+  background:rgba(255,245,250,.98);
+  box-shadow:
+    0 0 22px rgba(255,235,244,.95),
+    0 0 70px rgba(255,178,210,.45),
+    0 0 130px rgba(255,205,224,.20);
+  animation:openingLight 1.55s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+@keyframes openingLight{
+  0%{
+    opacity:0;
+    transform:scale(.2);
+  }
+  15%{opacity:1}
+  55%{
+    opacity:.6;
+    transform:scale(12);
+  }
+  100%{
+    opacity:0;
+    transform:scale(24);
+  }
+}
+
+/* =========================================================
+   PAGE 3 — SOFTER, CLEANER RECTANGULAR TEXT
+========================================================= */
+
+#p5 .content{
+  width:min(720px,90vw);
+  margin:18px auto;
+}
+
+#p5 .content h2,
+#p5 .content p{
+  box-sizing:border-box;
+  width:100%;
+  margin:11px auto;
+  border-radius:18px;
+  padding:14px 20px;
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,.095),
+      rgba(255,255,255,.032));
+  border:1px solid rgba(255,235,244,.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    0 12px 32px rgba(0,0,0,.13);
+  backdrop-filter:blur(13px);
+  -webkit-backdrop-filter:blur(13px);
+  text-align:center;
+}
+
+#p5 .content h2{
+  font-size:clamp(17px,2vw,22px);
+  font-weight:600;
+  line-height:1.75;
+  color:rgba(255,247,250,.93);
+}
+
+#p5 .content p{
+  font-size:clamp(14px,1.6vw,18px);
+  font-weight:400;
+  line-height:1.85;
+  color:rgba(255,235,243,.78);
+}
+
+#p5 .content h2{
+  animation:softBoxIn .95s cubic-bezier(.16,1,.3,1) both;
+}
+#p5 .content p{
+  animation:softBoxIn .95s .12s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes softBoxIn{
+  from{
+    opacity:0;
+    transform:translateY(11px);
+    filter:blur(4px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+    filter:blur(0);
+  }
+}
+
+/* =========================================================
+   BUTTON TYPOGRAPHY
+========================================================= */
+
+button,.btn,.choice,.option,.next-btn,.back-btn,.start-btn{
+  font-family:inherit !important;
+  font-weight:600 !important;
+  letter-spacing:.12px;
+  line-height:1.38 !important;
+  text-align:center;
+}
+
+button span,.btn span,.choice span,.option span{
+  display:inline-block;
+  line-height:1.38;
+}
+
+@media(max-width:600px){
+  #heart{
+    width:112px;
+    height:75px;
+  }
+
+  #p5 .content{
+    width:91vw;
+  }
+
+  #p5 .content h2{
+    padding:12px 15px;
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  #p5 .content p{
+    padding:11px 15px;
+    font-size:14px;
+    line-height:1.78;
+  }
+}
+</style>
+
+
+
+
+
+<style id="romantic-typography-final">
+/* Arabic romantic fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap');
+
+#p5 .content{
+    width:min(700px, 88vw);
+    margin:20px auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+/* Main romantic sentence */
+#p5 .content h4{
+    position:relative;
+    width:100%;
+    box-sizing:border-box;
+    margin:0;
+    padding:17px 24px 16px;
+
+    font-family:'Aref Ruqaa','Amiri',serif !important;
+    font-size:clamp(19px,2.25vw,27px) !important;
+    font-weight:700 !important;
+    line-height:1.75 !important;
+    letter-spacing:.15px;
+    text-align:center;
+
+    color:rgba(255,247,250,.96);
+
+    background:
+        linear-gradient(135deg,
+            rgba(255,239,246,.12),
+            rgba(255,255,255,.045));
+
+    border:1px solid rgba(255,225,238,.20);
+    border-radius:22px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 14px 38px rgba(0,0,0,.15),
+        0 0 32px rgba(255,170,205,.055);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.24),
+        0 0 18px rgba(255,210,230,.12);
+
+    animation:romanticTextIn .95s cubic-bezier(.16,1,.3,1) both;
+}
+
+/* tiny decorative glow above the main sentence */
+#p5 .content h4::before{
+    content:"✦";
+    position:absolute;
+    left:50%;
+    top:-12px;
+    transform:translateX(-50%);
+    width:24px;
+    height:24px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+
+    font-family:serif;
+    font-size:10px;
+    font-weight:400;
+    color:rgba(255,230,240,.9);
+
+    background:rgba(142,80,108,.65);
+    border:1px solid rgba(255,225,238,.22);
+    box-shadow:0 0 18px rgba(255,180,210,.22);
+}
+
+/* Supporting sentence */
+#p5 .content p{
+    width:92%;
+    box-sizing:border-box;
+    margin:0;
+    padding:13px 22px;
+
+    font-family:'Aref Ruqaa','Amiri',serif !important;
+    font-size:clamp(16px,1.8vw,21px) !important;
+    font-weight:400 !important;
+    line-height:1.85 !important;
+    letter-spacing:.1px;
+    text-align:center;
+
+    color:rgba(255,235,243,.84);
+
+    background:
+        linear-gradient(135deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.025));
+
+    border:1px solid rgba(255,225,238,.12);
+    border-radius:18px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.055),
+        0 10px 28px rgba(0,0,0,.11);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    animation:romanticTextIn .95s .12s cubic-bezier(.16,1,.3,1) both;
+}
+
+/* Poem typography */
+#p5 #typing{
+    font-family:'Aref Ruqaa','Amiri',serif !important;
+    font-size:clamp(18px,2vw,25px) !important;
+    font-weight:400 !important;
+    line-height:2.05 !important;
+    letter-spacing:.05px !important;
+    text-align:center;
+    color:rgba(255,245,249,.95);
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.25),
+        0 0 22px rgba(255,210,230,.10);
+}
+
+/* Smooth poem appearance */
+#p5 #typing::selection{
+    background:rgba(220,130,165,.28);
+}
+
+@keyframes romanticTextIn{
+    from{
+        opacity:0;
+        transform:translateY(13px) scale(.985);
+        filter:blur(5px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
+}
+
+/* Small screens */
+@media(max-width:600px){
+    #p5 .content{
+        width:91vw;
+        gap:10px;
+    }
+
+    #p5 .content h4{
+        padding:15px 16px;
+        font-size:18px !important;
+        line-height:1.72 !important;
+        border-radius:19px;
+    }
+
+    #p5 .content p{
+        width:95%;
+        padding:11px 15px;
+        font-size:15px !important;
+        line-height:1.8 !important;
+    }
+
+    #p5 #typing{
+        font-size:17px !important;
+        line-height:1.95 !important;
+    }
+}
+</style>
+
+
+<style id="poem-clear-final">
+/* ===== FINAL POEM — CLEAR + ROMANTIC ===== */
+#p5 #typing{
+    font-family:'Amiri', 'Noto Naskh Arabic', 'Tahoma', serif !important;
+    font-size:clamp(18px,2vw,24px) !important;
+    font-weight:700 !important;
+    line-height:2.0 !important;
+    letter-spacing:0 !important;
+    text-align:center;
+
+    color:rgba(255,248,251,.98) !important;
+
+    text-shadow:
+        0 1px 4px rgba(0,0,0,.35),
+        0 0 16px rgba(255,210,230,.10);
+
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+}
+
+/* The poem container: cleaner glass card */
+#p5 .poem-box,
+#p5 .poem-container,
+#p5 .poem-card,
+#p5 .poem-content{
+    border-radius:24px !important;
+    border:1px solid rgba(255,235,244,.18) !important;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.095),
+            rgba(255,255,255,.035)
+        ) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 18px 45px rgba(0,0,0,.16),
+        0 0 35px rgba(255,175,208,.06) !important;
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+}
+
+/* poem reveal is quicker but still soft */
+#p5 #typing{
+    animation:poemCleanReveal 1.65s cubic-bezier(.16,1,.3,1) both !important;
+}
+
+@keyframes poemCleanReveal{
+    0%{
+        opacity:0;
+        transform:translateY(9px);
+        filter:blur(3px);
+    }
+    55%{
+        opacity:.82;
+        filter:blur(.8px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+        filter:blur(0);
+    }
+}
+
+/* Main text cards become slightly cleaner */
+#p5 .content h4{
+    font-family:'Amiri','Noto Naskh Arabic','Tahoma',serif !important;
+    font-weight:700 !important;
+}
+
+#p5 .content p{
+    font-family:'Amiri','Noto Naskh Arabic','Tahoma',serif !important;
+    font-weight:400 !important;
+}
+
+@media(max-width:600px){
+    #p5 #typing{
+        font-size:17px !important;
+        line-height:1.9 !important;
+    }
+}
+</style>
+
+\n<style id="ultra-upgrade">\n/* ===== ULTRA UPGRADE ===== */\n.start-message-btn{\n  min-width:min(330px,82vw)!important; padding:18px 28px!important;\n  display:flex!important; align-items:center; justify-content:center; gap:14px;\n  font-size:17px!important; font-weight:700!important;\n  background:linear-gradient(120deg,rgba(255,255,255,.13),rgba(255,150,200,.13),rgba(255,255,255,.08))!important;\n  border:1px solid rgba(255,225,238,.24)!important;\n  box-shadow:0 20px 70px rgba(255,100,170,.14),inset 0 1px 0 rgba(255,255,255,.12)!important;\n  animation:startPulse 3s ease-in-out infinite;\n}\n.start-message-btn b{font-size:14px;opacity:.85;transition:.5s}\n.start-message-btn:hover b{transform:rotate(90deg) scale(1.2)}\n@keyframes startPulse{0%,100%{box-shadow:0 20px 70px rgba(255,100,170,.12),inset 0 1px 0 rgba(255,255,255,.12)}50%{box-shadow:0 24px 90px rgba(255,120,185,.25),inset 0 1px 0 rgba(255,255,255,.16)}}\n#p1 .content h2{font-family:'Amiri','Aref Ruqaa',serif!important;font-size:clamp(30px,7vw,48px)!important;letter-spacing:.2px}\n#p1 .random-love{font-family:'Amiri','Aref Ruqaa',serif!important;font-size:clamp(16px,4vw,21px)!important;min-height:105px;position:relative;overflow:hidden}\n#p1 .random-love:after{content:"";position:absolute;inset:auto 12% 0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,190,215,.45),transparent);transform:scaleX(.6);animation:lineBreath 3s ease-in-out infinite}\n@keyframes lineBreath{50%{transform:scaleX(1);opacity:.8}}\n/* more elegant page transitions */\n.page{transition:opacity .85s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1),filter .85s ease!important}\n.page.fade-out{transform:scale(.985) translateY(-14px)!important;filter:blur(12px)!important}\n/* cinematic moon: slower, smoother, stops around the middle of the lower half */\nbody.poem-moon .moon{animation:moonDescentUltra 4.8s cubic-bezier(.16,1,.3,1) forwards!important}\n@keyframes moonDescentUltra{0%{top:7%;transform:translateX(-50%) scale(1);opacity:1}22%{top:18%;transform:translateX(-50%) scale(.98) translateY(3px)}52%{top:36%;transform:translateX(-50%) scale(.88) translateY(-2px)}78%{top:48%;transform:translateX(-50%) scale(.80) translateY(2px)}100%{top:53%;transform:translateX(-50%) translateY(-50%) scale(.76);opacity:.98}}\nbody.poem-moon .moon-aura{animation:moonAuraUltra 4.8s ease-out forwards,moonGlow 7s ease-in-out 4.8s infinite}\n@keyframes moonAuraUltra{0%{top:-20px;opacity:.35;transform:translateX(-50%) scale(.8)}45%{opacity:1;transform:translateX(-50%) scale(1.15)}100%{top:35%;opacity:.82;transform:translateX(-50%) scale(.95)}}\n/* poem reveal: refined glow instead of heavy blur */\nbody.poem-moon #typing{animation:poemUltraIn 1.35s cubic-bezier(.16,1,.3,1) both!important}\n@keyframes poemUltraIn{0%{opacity:0;transform:translateY(22px) scale(.985);filter:blur(5px)}55%{opacity:.85;filter:blur(1px)}100%{opacity:1;transform:none;filter:none}}\n#typing{scroll-behavior:smooth!important;border-radius:28px!important;box-shadow:0 35px 100px rgba(0,0,0,.42),0 0 55px rgba(255,150,200,.07),inset 0 1px 0 rgba(255,255,255,.09)!important}\n/* subtle moving light across poem */\n#typing:before{content:"";position:absolute;inset:-40%;pointer-events:none;background:linear-gradient(115deg,transparent 42%,rgba(255,235,245,.055) 50%,transparent 58%);transform:translateX(-35%);animation:glassSweep 7s ease-in-out infinite}\n@keyframes glassSweep{0%,55%{transform:translateX(-35%)}75%,100%{transform:translateX(35%)}}\n#p5 .content{position:relative}\n/* replace floating hearts with sparse premium particles */\nbody.poem-moon .heart{opacity:0!important;animation:none!important}\n@media(max-width:600px){.start-message-btn{font-size:16px!important;padding:16px 22px!important}.page{padding-left:14px;padding-right:14px}#typing{width:94vw!important;max-height:62vh!important;padding:18px 16px!important}}\n</style>\n
+<style id="ultra-romantic-v3">
+:root{--rose:#ffb4d4;--rose2:#ffd7e7;--violet:#b9a6ff}
+body{background:radial-gradient(circle at 50% 110%,rgba(255,112,176,.13),transparent 35%),#04030a}
+body::before{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:1;background:radial-gradient(circle at 20% 20%,rgba(255,185,215,.06),transparent 22%),radial-gradient(circle at 82% 35%,rgba(166,145,255,.07),transparent 25%),radial-gradient(circle at 55% 92%,rgba(255,116,181,.055),transparent 25%);filter:blur(18px);animation:ultraBreathe 12s ease-in-out infinite alternate}
+@keyframes ultraBreathe{from{transform:scale(.96) rotate(-1deg);opacity:.65}to{transform:scale(1.05) rotate(1deg);opacity:1}}
+.nav-duo{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:16px;position:relative;z-index:50}.nav-duo button{min-width:190px;margin:4px;padding:14px 24px;position:relative;overflow:hidden;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 12px 35px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.08)}.nav-duo .shortcut{background:linear-gradient(135deg,rgba(255,184,214,.16),rgba(255,222,180,.08));border-color:rgba(255,215,230,.24)}.nav-duo button::after{content:"";position:absolute;top:-80%;left:-40%;width:35%;height:260%;transform:rotate(25deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transition:left .8s ease}.nav-duo button:hover::after{left:125%}
+.page .content{position:relative;isolation:isolate}.page .content::before{content:"";position:absolute;inset:-28px;z-index:-1;border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));border:1px solid rgba(255,235,245,.055);box-shadow:0 30px 100px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:.72}
+.memory-orbit{position:relative;width:176px;height:176px;margin:5px auto 20px;cursor:pointer;isolation:isolate;outline:none;filter:drop-shadow(0 20px 45px rgba(255,117,178,.14));transition:transform .7s cubic-bezier(.16,1,.3,1),filter .7s ease}.memory-orbit:hover{transform:scale(1.045);filter:drop-shadow(0 24px 55px rgba(255,137,193,.25))}.memory-orbit:active{transform:scale(.96)}
+.orbit-core{position:absolute;inset:38px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:'Amiri','Noto Naskh Arabic','Tahoma',serif;font-size:31px;font-weight:700;background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.42),transparent 22%),radial-gradient(circle,rgba(255,199,224,.25),rgba(151,102,171,.12) 48%,rgba(17,8,27,.55) 100%);border:1px solid rgba(255,236,246,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 0 35px rgba(255,154,205,.28),0 0 90px rgba(177,128,255,.13);animation:coreBreath 3.2s ease-in-out infinite}.orbit-core::before{content:"";position:absolute;inset:11px;border-radius:50%;border:1px solid rgba(255,225,239,.16);box-shadow:0 0 18px rgba(255,195,220,.12)}
+@keyframes coreBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.orbit-ring{position:absolute;inset:12px;border:1px solid rgba(255,207,228,.12);border-radius:50%;animation:orbitSpin 13s linear infinite}.ring-b{inset:24px;border-style:dashed;border-color:rgba(194,176,255,.16);animation-duration:19s;animation-direction:reverse}@keyframes orbitSpin{to{transform:rotate(360deg)}}
+.constellation-star{position:absolute;color:#ffe8f3;text-shadow:0 0 8px #ffd1e6,0 0 22px rgba(255,128,190,.8);font-size:17px;animation:starFloat 2.8s ease-in-out infinite}.star-a{top:16px;left:36px}.star-b{top:53px;right:10px;animation-delay:.8s}.star-c{bottom:22px;left:18px;animation-delay:1.5s}@keyframes starFloat{0%,100%{transform:translateY(0) scale(.8);opacity:.45}50%{transform:translateY(-7px) scale(1.25);opacity:1}}
+.constellation-heart{position:absolute;right:24px;bottom:19px;font-size:25px;color:#ffc5dc;text-shadow:0 0 14px rgba(255,144,194,.9);animation:heartFloat 2.5s ease-in-out infinite}@keyframes heartFloat{50%{transform:translateY(-5px) rotate(4deg) scale(1.1)}}
+.memory-copy{text-align:center;position:relative;z-index:2}.memory-kicker{font-size:11px;letter-spacing:2.5px;color:rgba(255,220,234,.58);margin-bottom:7px}.memory-copy p{margin:0;color:rgba(255,245,249,.84);line-height:1.95}.memory-copy strong{color:#fff;text-shadow:0 0 15px rgba(255,171,211,.18)}.memory-hint{margin-top:13px;font-size:11px;color:rgba(255,207,226,.55);animation:hintPulse 2.2s ease-in-out infinite}@keyframes hintPulse{50%{opacity:.42;transform:translateY(3px)}}
+.portal-open .orbit-ring{animation-duration:1.2s}.portal-open .orbit-core{animation:portalCore .9s cubic-bezier(.16,1,.3,1) forwards}.portal-open .constellation-star{animation:starConverge .8s cubic-bezier(.16,1,.3,1) forwards}@keyframes portalCore{to{transform:scale(1.28);filter:brightness(1.35);box-shadow:0 0 55px rgba(255,185,218,.65),0 0 150px rgba(180,139,255,.25)}}@keyframes starConverge{to{transform:translate(0,0) scale(1.5);opacity:1}}
+.memory-burst{position:fixed;width:10px;height:10px;border-radius:50%;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);background:#fff;box-shadow:0 0 20px 8px rgba(255,194,222,.7),0 0 80px 30px rgba(185,154,255,.22);animation:memoryBurst 1.5s cubic-bezier(.16,1,.3,1) forwards}@keyframes memoryBurst{to{width:180vmax;height:180vmax;opacity:0}}
+#p5 #typedText{font-family:'Amiri','Noto Naskh Arabic','Noto Sans Arabic','Tahoma',serif!important;font-variant-ligatures:common-ligatures contextual;font-feature-settings:'liga' 1,'calt' 1,'kern' 1;direction:rtl;unicode-bidi:plaintext;text-rendering:optimizeLegibility;transition:text-shadow .16s ease,filter .16s ease}#p5 #typedText.ink-pulse{text-shadow:0 0 9px rgba(255,207,226,.48),0 0 23px rgba(255,137,192,.14);filter:brightness(1.04)}#p5 #typing{border:1px solid rgba(255,228,240,.12)!important;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025))!important;box-shadow:0 30px 90px rgba(0,0,0,.38),0 0 50px rgba(255,140,195,.08),inset 0 1px rgba(255,255,255,.08)!important}
+.romantic-dust{position:fixed;z-index:3;pointer-events:none;width:3px;height:3px;border-radius:50%;background:#ffdcea;box-shadow:0 0 8px #ffd2e6;animation:dustRise linear forwards}@keyframes dustRise{from{transform:translate3d(0,20px,0) scale(.5);opacity:0}15%{opacity:.8}to{transform:translate3d(var(--dx),-120px,0) scale(1.3);opacity:0}}
+@media(max-width:600px){.nav-duo{gap:7px}.nav-duo button{min-width:155px;padding:12px 15px;font-size:14px}.memory-orbit{width:152px;height:152px}.orbit-core{inset:33px;font-size:28px}.page .content::before{inset:-14px}}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SKY
+===================================================== -->
+
+<div class="sky">
+
+    <div class="aurora"></div>
+
+</div>
+
+
+<!-- =====================================================
+     MOON
+===================================================== -->
+
+<div class="moon-aura"></div>
+
+<div class="moon"></div>
+
+
+
+<!-- =====================================================
+     PLANETS
+===================================================== -->
+<div class="planet one"></div>
+<div class="planet two"></div>
+<div class="planet three"></div>
+
+<!-- =====================================================
+     METEORS
+===================================================== -->
+
+<div class="meteor"
+     style="
+     --length:110px;
+     --duration:11s;
+     animation-delay:2s;">
+</div>
+
+<div class="meteor"
+     style="
+     --length:80px;
+     --duration:15s;
+     animation-delay:7s;">
+</div>
+
+<div class="meteor"
+     style="
+     --length:130px;
+     --duration:19s;
+     animation-delay:13s;">
+</div>
+
+
+<!-- =====================================================
+     PROGRESS DOTS
+===================================================== -->
+
+<div class="progress" id="progress">
+    <span class="dot" data-page="p1"></span>
+    <span class="dot" data-page="p2"></span>
+    <span class="dot" data-page="p3"></span>
+    <span class="dot" data-page="p4"></span>
+    <span class="dot" data-page="p5"></span>
+    <span class="dot" data-page="p6"></span>
+</div>
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<div class="page active" id="p1">
+
+    <div class="content">
+
+        <h2>
+            إلى آية… 🤍
+        </h2>
+
+        <div
+            class="random-love"
+            id="randomLove">
+        </div>
+
+        <div class="nav-duo">
+            <button onclick="continueJourney()">أكمل لبقية الصفحات ✦</button>
+            <button class="shortcut" onclick="skipToPoem()">روح للقصيدة والأغنية ✨</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PAGE 2
+===================================================== -->
+
+<div class="page" id="p2">
+
+    <div class="content">
+
+        <h2>
+            هلا آية 🤍
+        </h2>
+<p>اني يوسف… وهاي الرسالة إلج وحدج. 🤍</p>
+
+        <button onclick="go('p2','p3')">
+            هلا يوسف
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PAGE 3
+===================================================== -->
+
+<div class="page" id="p3">
+
+    <div class="content">
+
+        <h2>
+           إنتِ أكثر إنسانة أحبها بحياتي… وإنتِ الماضي والحاضر وكل المستقبل 🤍
+        </h2>
+
+        <p>
+           خليج مثل نجوم الليل… وأنا أحب الليل لأن هدوءه يشبهج 🤍 
+        </p>
+
+        <button onclick="go('p3','p4')">
+          يمةة
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PAGE 4
+===================================================== -->
+
+<div class="page" id="p4">
+
+    <div class="content">
+
+        <div class="memory-orbit" id="memoryOrbit" role="button" tabindex="0" aria-label="افتح الرسالة">
+            <div class="orbit-ring ring-a"></div>
+            <div class="orbit-ring ring-b"></div>
+            <div class="constellation-star star-a">✦</div>
+            <div class="constellation-star star-b">✦</div>
+            <div class="constellation-star star-c">✦</div>
+            <div class="constellation-heart">♡</div>
+            <div class="orbit-core"><span>لجِ</span></div>
+        </div>
+        <div class="memory-copy">
+            <div class="memory-kicker">رسالة من يوسف</div>
+            <p>مو لازم تضغطين خمس مرات…<br><strong>لمسة وحدة تكفي حتى نفتح الذكرى 🤍</strong></p>
+            <div class="memory-hint">المسي الضوء ✦</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PAGE 5
+===================================================== -->
+
+<div class="page" id="p5">
+
+    <div class="content">
+
+        <div id="typing"><span id="typedText"></span><span class="cursor" id="cursor">▌</span></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FINAL PAGE
+===================================================== -->
+
+<div class="page" id="p6">
+
+    <div class="final-content">
+
+        <div class="final-symbol">
+            ✦　♡　✦
+        </div>
+
+        <div id="finalMessage"></div>
+
+        <div class="final-heart">
+            🤍
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="music" loop preload="auto">
+
+    <source
+        src="song.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+
+/* =========================================================
+   CREATE STARS
+========================================================= */
+
+for(let i=0;i<105;i++){
+
+    const star=
+        document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=
+        Math.random()*100+"%";
+
+    star.style.top=
+        Math.random()*100+"%";
+
+    const size=
+        1+
+        Math.random()*2.4;
+
+    star.style.width=
+        size+"px";
+
+    star.style.height=
+        size+"px";
+
+    star.style.setProperty(
+        "--time",
+        (2+
+        Math.random()*5)+"s"
+    );
+
+    star.style.animationDelay=
+        Math.random()*6+"s";
+
+    document.body.appendChild(star);
+}
+
+
+/* =========================================================
+   SPECIAL STARS
+========================================================= */
+
+const specialPositions=[
+    [18,20],
+    [82,18],
+    [12,45],
+    [88,40],
+    [24,70],
+    [76,72],
+    [50,28]
+];
+
+
+specialPositions.forEach(
+    position=>{
+
+        const star=
+            document.createElement("div");
+
+        star.className=
+            "special-star";
+
+        star.style.left=
+            position[0]+"%";
+
+        star.style.top=
+            position[1]+"%";
+
+        star.style.animationDelay=
+            Math.random()*3+"s";
+
+        document.body.appendChild(
+            star
+        );
+    }
+);
+
+
+/* =========================================================
+   BUTTON GLOW FOLLOW (pointer)
+========================================================= */
+
+document.addEventListener("pointermove",(e)=>{
+
+    const target=e.target.closest("button");
+
+    if(!target) return;
+
+    const rect=target.getBoundingClientRect();
+
+    target.style.setProperty("--mx",(e.clientX-rect.left)+"px");
+    target.style.setProperty("--my",(e.clientY-rect.top)+"px");
+
+});
+
+
+/* =========================================================
+   ROMANTIC SENTENCES
+========================================================= */
+
+const loveSentences=[
+
+"وجودج بحياتي أجمل صدفة صارتلي. 🤍",
+
+"من عرفتلج، صار عندي سبب جديد أحب الأيام.",
+
+"إنتِ مو بس شخص أحبه… إنتِ راحة قلبي.",
+
+"ضحكتج وحدها تكدر تغير يوم كامل إليّ.",
+
+"صوتج بالنسبة إليّ يشبه الأمان.",
+
+"اسمج من أنطقه أحس قلبي ابتسم.",
+
+"أحب تفاصيلج الصغيرة قبل الكبيرة.",
+
+"حتى سكوتج أحبه، لأن وجودج وحده يكفيني.",
+
+"لو أگدر أختار شخص واحد يبقى وياي للأبد، راح أختارج.",
+
+"كل مرة أحچي وياج، أحبج أكثر.",
+
+"إنتِ المكان اللي يروحله قلبي من يتعب.",
+
+"لو الحب كلمة، فأنتِ كل معانيها.",
+
+"أريدج تعرفين إن أكو شخص بالدنيا يشوفج أجمل من كل شيء.",
+
+"أتمنى كل أيامي الجاية بيها صوتج وضحكتج.",
+
+"قربج بالنسبة إليّ راحة ما أريد أفقدها.",
+
+"وجودج يخليني أبتسم حتى وأنا ما عندي سبب.",
+
+"إنتِ الشي الحلو اللي صار بوقت ما كنت أتوقع بيه أي شيء.",
+
+"أحبج بطريقة هادئة… بس عميقة جدًا.",
+
+"كل شيء بيج عندي له معنى.",
+
+"أريد أكون الشخص اللي تلجئين إله من تضوجين.",
+
+"أحبج لأن وياج أكون أنا بدون خوف.",
+
+"حتى الأيام العادية تصير حلوة من تكونين بيها.",
+
+"إنتِ مو جزء من يومي… إنتِ أجمل جزء منه.",
+
+"قلبي من عرفج صار عنده مكان واحد مفضل… إنتِ.",
+
+"أتمنى العمر يطول حتى أعيش وياج تفاصيل أكثر.",
+
+"أحبج، وأحب كل شيء يجعلني أتذكرج.",
+
+"إنتِ من الأشخاص اللي الواحد يخاف يخسرهم لأن وجودهم ما يتعوض.",
+
+"كل ما أتخيل مستقبلي، أتمنى أشوفج بيه.",
+
+"أريدج دائمًا تعرفين إنج غالية جدًا عندي.",
+
+"ما أريد من الدنيا شيء كبير… أريد بس أشوفج بخير.",
+
+"إذا عندي دعوة وحدة مستجابة، راح أدعي تبقين بخير وسعيدة.",
+
+"أحبج أكثر من الكلام اللي أگدر أقوله.",
+
+"وجودج بحياتي نعمة ما أريد أعتاد عليها.",
+
+"إنتِ الشخص اللي أتمنى الأيام ما تبعده عني.",
+
+"أحبج اليوم… وباچر… وكل يوم بعده.",
+
+"من بين كل الناس، قلبي اختارج إنتِ.",
+
+"مكانج بقلبي مختلف عن الكل.",
+
+"أجمل شيء بالحياة أن يكون عندك شخص تحس وياه بالأمان… وإنتِ هذا الشخص.",
+
+"أحيانًا أفكر شلون صار حظي حلو لدرجة إنج دخلتي حياتي.",
+
+"لو الزمن يرجع، راح أختارج مرة ثانية.",
+
+"أحب اللحظة اللي يظهر بيها اسمج على شاشة تلفوني.",
+
+"رسالة منج تكدر تغير مزاجي بالكامل.",
+
+"وجودج يخلّي قلبي أهدأ.",
+
+"ما أعرف شلون أوصفج… بس أعرف إنج غالية بطريقة مختلفة.",
+
+"إنتِ مو مجرد حب… إنتِ شعور أمان.",
+
+"أتمنى أكون دائمًا سبب ابتسامتج.",
+
+"أريد أظل أشوف ضحكتج حتى أكبر.",
+
+"لو أكتب عنج كل يوم، ما راح أخلص الكلام.",
+
+"إنتِ أجمل تفصيل دخل حياتي بدون موعد.",
+
+"أحبج حتى بالأيام اللي ما أگدر أشرح بيها شعوري.",
+
+"أريدج تعرفين إن قلبج عندي مكانه آمن.",
+
+"ما أريد أكون شخص عابر بحياتج… أريد أكون الشخص اللي يبقى.",
+
+"إذا الدنيا تعبتج، تعالي لقلبي… هذا مكانج.",
+
+"أحبج لأنج تجعلين الأشياء البسيطة تبدو جميلة.",
+
+"أريد أعيش وياج تفاصيل صغيرة محد يعرف قيمتها غيرنا.",
+
+"كلمة أحبج قليلة على كل اللي أحسه.",
+
+"إنتِ الشخص اللي أتمنى أشوفه من أصحى ومن أنام.",
+
+"أحبج أكثر من كل مرة گلت بيها أحبج.",
+
+"من أشوفج سعيدة، أحس أنا هم سعيد.",
+
+"أهم شيء عندي إنج تكونين مرتاحة ومطمئنة.",
+
+"أريدج تظلين دائمًا قريبة من قلبي.",
+
+"ما أريد منج شيء غير إنج تبقين على طبيعتج.",
+
+"أحب عفويتج أكثر من أي شيء مصطنع.",
+
+"إنتِ أجمل سبب خلاني أبتسم بدون ما أعرف ليش.",
+
+"أريد الأيام تحفظج إليّ.",
+
+"لو أگدر أخليج بعيني حتى ما يصيبج شيء، راح أسويها.",
+
+"إنتِ الشخص اللي أريد أشارك وياه الأخبار الحلوة قبل الكل.",
+
+"أحب سوالفنا حتى لو كانت عن أبسط الأشياء.",
+
+"أحيانًا مجرد وجودج يكفيني.",
+
+"ما أحتاج مناسبة حتى أقول لج إنج غالية.",
+
+"إنتِ عندي مو مثل الكل… ولا راح تكونين.",
+
+"أريدج تعرفين إن قلبي اختارج عن قناعة.",
+
+"أحبج لأنج تخلي قلبي يصدق إن الأشياء الجميلة حقيقية.",
+
+"أحلى شيء صارلي هو إني عرفتلج.",
+
+"أتمنى كل سنة تمر علينا تكون أجمل من اللي قبلها.",
+
+"أريد أشوفج تحققين كل أحلامج وأكون قريب منج.",
+
+"إذا يوم من الأيام شكيتِ بقيمتج، تذكري إنج عندي أغلى من الكلام.",
+
+"أنتِ الشخص اللي أتمنى أحافظ عليه طول العمر.",
+
+"الحب وياج مو تعب… الحب وياج راحة.",
+
+"من دخلتي حياتي، بعض الأشياء فقدت أهميتها لأن وجودج صار أهم.",
+
+"إنتِ مو فقط في قلبي… إنتِ جزء من دعواتي.",
+
+"أتمنى الله يحفظ ابتسامتج من كل حزن.",
+
+"أريدج دائمًا تشوفين نفسج بعيني… حتى تعرفين شكد إنتِ جميلة.",
+
+"لو أقدر أختصر كل شعوري بكلمة، راح أگول: آية.",
+
+"إنتِ أجمل شخص تمنيت ما أخسره.",
+
+"أحبج حب هادئ، ثابت، وكل يوم يكبر أكثر.",
+
+"وجودج هو الشي اللي ما أريد الأيام تاخذه مني.",
+
+"كل ليلة من أشوف القمر أتذكر إن أكو شيء أجمل منه… إنتِ.",
+
+"يمكن القمر ينور الليل، بس إنتِ تنورين قلبي.",
+
+"لو كل نجمة تحمل رسالة، أخليها كلها تقول لج أحبج.",
+
+"الليل حلو والقمر حلو، بس وجودج أحلى.",
+
+"أحبج مثل هدوء الليل… بهدوء، بس من كل قلبي.",
+
+"لو كان قلبي سماء، إنتِ القمر اللي ما يغيب.",
+
+"أتمنى كل ليلة تنامين وإنتِ تعرفين إنج محبوبة.",
+
+"حتى القمر لو شافج، راح يعرف إن عنده منافسة.",
+
+"إنتِ النور اللي ما يحتاج شمس حتى يبين.",
+
+"أحبج اليوم، وباچر، وبعد ألف باچر.",
+
+"من عرفتلج، عرفت أن بعض الأشخاص ما يدخلون حياتنا عبث.",
+
+"إنتِ مو لحظة حلوة بحياتي… إنتِ فصل كامل من الجمال.",
+
+"كل طريق أمشيه أتمنى بالنهاية يوديني إلج.",
+
+"أريد أكون قريب منج باللحظات الحلوة والصعبة.",
+
+"أحبج حتى لما تكونين ساكتة وما تحچين.",
+
+"وجودج وحده يخليني أحس إن الدنيا ألطف.",
+
+"إنتِ الشخص اللي قلبي يرتاح له بدون تفسير.",
+
+"أريد الأيام تمشي ببطء لما أكون وياج.",
+
+"أحبج لأنج تجعلين قلبي يشعر بأنه بمكانه الصحيح.",
+
+"أريد كل ذكرياتنا القادمة تكون أجمل من أي شيء مضى.",
+
+"لو الحياة تختارلي أمنية، راح أختار وجودج.",
+
+"إنتِ أجمل شيء ما كنت أعرف إني أحتاجه.",
+
+"أحب الطريقة اللي تغيرين بيها مزاجي بمجرد كلمة.",
+
+"أريدج تظلين الضحكة اللي أحب أسمعها.",
+
+"أكو أشياء كثيرة جميلة بالدنيا، بس إنتِ عندي أجملها.",
+
+"كل ما أشوف اسمج، قلبي يسوي شيء ما يسويه مع أحد.",
+
+"أريد أظل أتعرف عليج حتى بعد سنين.",
+
+"يمكن ما أگدر أوصف شعوري دائمًا، بس قلبي يعرف.",
+
+"أحبج أكثر مما أگدر أشرح، وأهدأ مما أگدر أظهر.",
+
+"إنتِ مو مجرد حبيبة… إنتِ إنسانة أخاف عليها من الدنيا.",
+
+"أريدج دائمًا تضحكين، حتى لو ما كنت أنا السبب.",
+
+"من تكونين بخير، قلبي يكون بخير.",
+
+"أحبج بطريقة أتمنى الأيام تثبتها مو الكلام.",
+
+"وجودج صار جزء من الأشياء اللي أتمنى ما تتغير.",
+
+"أريدج تعرفين إن مكانج عندي ما يشبه أي مكان.",
+
+"كل يوم جديد هو فرصة جديدة حتى أحبج أكثر.",
+
+"إنتِ من الناس اللي وجودهم ينحفظ بالقلب.",
+
+"أحبج، وبس… والباقي تفاصيل.",
+
+"إذا كان للحب وطن، فقلبي وطنج.",
+
+"أريد كل صباح يجي ويا خبر حلو إلج.",
+
+"أتمنى أكون الشخص اللي يطمنج لما الدنيا تخوفج.",
+
+"أحبج لأنج تجعلين قلبي أهدأ من مجرد وجودج.",
+
+"ما أعرف شلون صار، بس صار عندج مكان ما أخلي أحد يقرب منه.",
+
+"إنتِ الشي اللي كل ما فكر بيه، أبتسم.",
+
+"أتمنى أبقى الشخص اللي تشوفين وياه الأمان.",
+
+"أريد أعيش وياج لحظات بسيطة بس تبقى بالذاكرة للأبد.",
+
+"إنتِ عندي أغلى من كل الكلام اللي ممكن ينكتب.",
+
+"وأخيرًا… إذا سألتي قلبي من يختار، راح يختارج كل مرة. 🤍"
+
+];
+
+
+/* =========================================================
+   RANDOM FIRST SENTENCE
+========================================================= */
+
+function getRandomSentence(){
+
+    const last=
+        localStorage.getItem(
+            "lastLoveSentence"
+        );
+
+    let available=
+        loveSentences.filter(
+            sentence =>
+            sentence !== last
+        );
+
+    if(available.length===0){
+
+        available=
+            [...loveSentences];
+    }
+
+    const sentence=
+        available[
+            Math.floor(
+                Math.random()*
+                available.length
+            )
+        ];
+
+    localStorage.setItem(
+        "lastLoveSentence",
+        sentence
+    );
+
+    return sentence;
+}
+
+
+document.getElementById(
+    "randomLove"
+).textContent=
+    getRandomSentence();
+
+
+/* =========================================================
+   PROGRESS DOTS UPDATE
+========================================================= */
+
+const pageOrder=["p1","p2","p3","p4","p5","p6"];
+
+function updateProgress(pageId){
+
+    const idx=
+        pageOrder.indexOf(pageId);
+
+    document
+        .querySelectorAll(".progress .dot")
+        .forEach((dot,i)=>{
+
+            dot.classList.toggle(
+                "on",
+                i<=idx
+            );
+        });
+}
+
+updateProgress("p1");
+
+
+/* =========================================================
+   PAGE TRANSITION
+========================================================= */
+
+function go(from,to){
+    const oldPage=document.getElementById(from);
+    const newPage=document.getElementById(to);
+    if(!oldPage || !newPage || oldPage===newPage) return;
+    oldPage.classList.add("fade-out");
+    updateProgress(to);
+    setTimeout(()=>{
+        oldPage.classList.remove("active","fade-out");
+        newPage.classList.add("active");
+    },720);
+}
+
+function continueJourney(){
+    cinematicFlash();
+    go("p1","p2");
+}
+
+function skipToPoem(){
+    cinematicFlash();
+    document.body.classList.add("fast-route");
+    const oldPage=document.getElementById("p1");
+    const poemPage=document.getElementById("p5");
+    oldPage.classList.add("fade-out");
+    updateProgress("p5");
+    selectPoem();
+    setTimeout(()=>{
+        oldPage.classList.remove("active","fade-out");
+        poemPage.classList.add("active");
+        startRomantic();
+    },620);
+}
+
+const memoryOrbit=document.getElementById("memoryOrbit");
+function openMemoryPortal(){
+    if(!memoryOrbit || memoryOrbit.dataset.opened === "1") return;
+    memoryOrbit.dataset.opened="1";
+    memoryOrbit.classList.add("portal-open");
+    const rect=memoryOrbit.getBoundingClientRect();
+    const burst=document.createElement("div");
+    burst.className="memory-burst";
+    burst.style.left=(rect.left+rect.width/2)+"px";
+    burst.style.top=(rect.top+rect.height/2)+"px";
+    document.body.appendChild(burst);
+    setTimeout(()=>burst.remove(),1600);
+    setTimeout(()=>{
+        selectPoem();
+        go("p4","p5");
+        setTimeout(startRomantic,520);
+    },900);
+}
+if(memoryOrbit){
+    memoryOrbit.addEventListener("click",openMemoryPortal);
+    memoryOrbit.addEventListener("keydown",e=>{
+        if(e.key==="Enter" || e.key===" "){e.preventDefault();openMemoryPortal();}
+    });
+}
+
+
+/* =========================================================
+   MEMORY PORTAL COMPLETE
+========================================================= */
+
+/* =========================================================
+   POEMS — تتغير كل مرة يفتح فيها الرابط
+========================================================= */
+
+const poems = [
+
+`جا شرد اكلك بعد واندهلك بيا صفة  وعيوني لو شافتك تفترسك من الولع`,
+
+`آية… وجودج بحياتي مو شيء عابر، وجودج هو الشيء الحلو اللي كل ما أتذكره أبتسم، وأتمنى أبقى دائمًا سبب صغير من أسباب فرحتج. 🤍`,
+
+`آية… يمكن ما أعرف أوصف كل اللي بداخلي، بس أعرف إن وجودج يفرق وياي، وإن ضحكتج وحدها تقدر تغيّر يوم كامل وتخليه أجمل. 🤍`,
+
+`آية… بين كل الناس، قلبي اختارج إنتِ، مو لأنج كاملة، لكن لأن وجودج بالنسبة إلي مختلف، وقربج دائمًا إله مكان خاص بقلبي. 🤍`,
+
+`ومن شفتك اني الحزن من كل حياتي اختفئ يا سلوتي ومنيتي يا بسمتي ودمعتي يا مالك العاطفة.يا اترف من الورد بس يمك اني انسعد 🤍`,
+
+`اذا انت جرح ما اريدك تطيب اروف بصفك ولا ما اعوفك واذا تطلب عيوني وداعتك هاك عمت عين العيون الماتشوفك`,
+
+`اسئل ليش احبك حتئ اكلك ليش وليش شما تسوي وياك اقبلك لحظه موت عمري سنيني كلهن خوف بس وياك اامن من اوصلك .وانت اخر نفس شكد عزيز تصير وبلحظ الموت تريد نملك？`,
+
+`شمعة انت بحياتي وعمري ظلمه ليل شعلت روحي وخفت ما شعلك اشعلك خاف سنين عمرك تحترك بالشوك اضملك كمت من عمري اعزلك`,
+
+`حرت وياج？يا غزل يرهم علئ طولج ويا اغنية التكدر توصف عيونج？حرت وياج يا شعر اكتبلج وشحجي وشكول？`,
+
+`انتي احلئ من القصيده واحلئ من كل الكلام وانتي شمس الله ومشت ع الكاع حقج يا شمسنا تتبختري .وتصوري شكد انتي حلوه تصوري.`,
+
+`اذا تسمحلي احبك واترك الناس واجيك بطرك باكيتي(مادخن بس يلا اريد بوسه اذا قريتي هاي تعاي انطيني بوسه)واتركها الجكاير وادمن عليك`,
+
+`انتي مدري شون اوصفج ليش ماجيتي من الأول؟؟؟؟`,
+
+`ولو انك مو دمع ماضمتك عيني ولو انك مو كحل ما شالتك عيني يلوموني واحسك تكبر بروحي وانا بلا شوفتك شينفعن عيوني يشوفتي ورجوتي ورنياي`,
+
+`غركان بمحبتك اي بعد شتريد ومدمن ع عيونك واعشكنك عشك اطفال اني احبك واحب كل ذره منك`,
+
+`انا مسودن واحبك حب عراقيين مو من عينك من الشفه باوعلي واريد عيونك بكبر البراءه البيك هم تشوفني وهم منها تغمزلي`,
+
+`لمن فقدت الأمل جتي محبتك الي تعويض رباني يلتستحق العمر ايامي كلها الك وحده وحده`,
+
+`احبك حد كطع النفس واغار عليك واخاف تمر عليك ايام تنساني.ولو ادري بوفائك زين بس شوف القلق لوين وداني.حبيبي انت واهلي وامي وابوي .واذا مريت صدفه وما الحك بيك ابوس تراب رجلك لو تعداني`
+
+];
+
+let currentPoem=
+    poems[0];
+
+
+function selectPoem(){
+
+    const last=
+        localStorage.getItem(
+            "lastPoem"
+        );
+
+
+    let available=
+        poems.filter(
+            p => p !== last
+        );
+
+
+    if(
+        available.length===0
+    ){
+
+        available=
+            [...poems];
+    }
+
+
+    const selected=
+        available[
+            Math.floor(
+                Math.random()*
+                available.length
+            )
+        ];
+
+
+    localStorage.setItem(
+        "lastPoem",
+        selected
+    );
+
+
+    currentPoem=
+        selected;
+}
+
+
+selectPoem();
+
+
+/* =========================================================
+   MUSIC + TYPING
+========================================================= */
+
+const music=
+    document.getElementById(
+        "music"
+    );
+
+
+let typingIndex=0;
+
+
+
+function startRomantic(){
+
+    /* Cinematic moon descent begins at the exact moment
+       the poem starts typing. */
+    document.body.classList.remove("poem-moon");
+    void document.body.offsetWidth;
+    document.body.classList.add("poem-moon");
+    document.body.classList.add("romantic-scene");
+
+
+
+    const typedText=
+        document.getElementById(
+            "typedText"
+        );
+
+    const cursor=
+        document.getElementById(
+            "cursor"
+        );
+
+
+    typedText.textContent="";
+
+    cursor.style.display=
+        "inline-block";
+
+
+    typingIndex=0;
+
+
+    /* تشغيل الأغنية */
+
+    music.volume=0;
+
+    music.play().catch(()=>{});
+
+
+    let volume=0;
+
+
+    const fadeMusic=
+        setInterval(()=>{
+
+            volume+=.025;
+
+            if(volume>=.65){
+
+                volume=.65;
+
+                clearInterval(
+                    fadeMusic
+                );
+            }
+
+            music.volume=
+                volume;
+
+        },100);
+
+
+    /* كتابة الرسالة حرف حرف */
+
+    const interval=
+        setInterval(()=>{
+
+            typingIndex++;
+            typedText.textContent=currentPoem.slice(0,typingIndex);
+            typedText.classList.remove("ink-pulse");
+            void typedText.offsetWidth;
+            typedText.classList.add("ink-pulse");
+
+
+            const typingBox=
+                document.getElementById(
+                    "typing"
+                );
+
+            typingBox.scrollTop=
+                typingBox.scrollHeight;
+
+
+            if(
+                typingIndex>=
+                currentPoem.length
+            ){
+
+                clearInterval(
+                    interval
+                );
+
+                cursor.style.display=
+                    "none";
+
+
+                setTimeout(()=>{
+
+                    prepareFinal();
+
+                    go(
+                        "p5",
+                        "p6"
+                    );
+
+                },1050);
+            }
+
+        },145);
+}
+
+
+/* =========================================================
+   FINAL MESSAGES
+   كل رسالة سطران فقط
+========================================================= */
+
+const finalMessages=[
+
+[
+"من بين كل الناس، قلبي اختارج إنتِ. 🤍",
+"وأتمنى تبقين أجمل اختيار بحياتي دائمًا."
+],
+
+[
+"إذا كان للحياة أجمل هدية، فأنتِ هديتي.",
+"وإذا كان للقلوب وطن، فقلبي وطنج."
+],
+
+[
+"يمكن ما أگدر أوعدج بالدنيا كلها.",
+"بس أوعدج إن مكانج بقلبي ما يتغير."
+],
+
+[
+"أريد كل أيام عمرج تكون مليانة ضحكة.",
+"وأتمنى أكون قريب من كل ضحكة منها."
+],
+
+[
+"السماء بيها ملايين النجوم.",
+"بس قلبي اختار نجمة وحدة… إنتِ. ✨"
+],
+
+[
+"كل شيء بالدنيا ممكن يتغير.",
+"بس الشي الوحيد اللي أتمنى ما يتغير هو حبج بقلبي."
+],
+
+[
+"إذا سألتيني شنو أجمل شيء صار بحياتي؟",
+"راح أگول بكل بساطة: إنتِ."
+],
+
+[
+"القمر ينور الليل.",
+"بس وجودج ينور قلبي أكثر. 🌙"
+],
+
+[
+"أريدج تظلين دائمًا مطمئنة.",
+"لأن أكو قلب هنا يتمنى لج الخير قبل نفسه."
+],
+
+[
+"ما أريد قصة حب مثالية.",
+"أريد قصة حقيقية تبقى بيني وبينج."
+],
+
+[
+"لو الزمن يعطيني فرصة أختار مرة ثانية.",
+"راح أختارج إنتِ… بدون أي تردد."
+],
+
+[
+"كل الطرق الحلوة أتمنى نهايتها تكون وياج.",
+"وكل العمر أتمنى أعيشه وإنتِ قريبة."
+],
+
+[
+"يمكن العالم كله ما يعرف قيمتج.",
+"بس قلبي يعرف شكد إنتِ غالية."
+],
+
+[
+"أحبج مو لأنج كاملة.",
+"أحبج لأنج إنتِ… وهذا يكفيني."
+],
+
+[
+"أتمنى كل ليلة تنامين مرتاحة.",
+"وكل صباح تصحين وأنتِ تعرفين إنج محبوبة."
+],
+
+[
+"لو أگدر أخلي أمنية وحدة تتحقق.",
+"راح أختار تبقين بخير وسعيدة دائمًا."
+],
+
+[
+"إنتِ مو فصل عابر بحياتي.",
+"إنتِ القصة اللي أتمنى ما تخلص."
+],
+
+[
+"أكو أشياء ما تنوصف بالكلام.",
+"ومكانج بقلبي واحد منها."
+],
+
+[
+"من عرفتلج، صار عندي معنى جديد للسعادة.",
+"وصرت أعرف ليش بعض الأشخاص ما يتعوضون."
+],
+
+[
+"يمكن ما تعرفين شكد وجودج يفرق وياي.",
+"بس أتمنى يومًا ما تعرفين."
+],
+
+[
+"كل ليلة أشوف القمر وأتذكرج.",
+"وأبتسم لأن عندي شخص أجمل من كل النجوم."
+],
+
+[
+"أريد أكون ذكرى حلوة بحياتج.",
+"وأريدج تكونين أجمل شيء بذاكرتي."
+],
+
+[
+"إذا الحب أمان، فأنا ألقى أماني وياج.",
+"وإذا الحب وطن، فقلبي اختار وطنه إنتِ."
+],
+
+[
+"أحبج بهدوء يشبه الليل.",
+"وبعمق أكبر من كل الكلام."
+],
+
+[
+"ما أعرف شنو يخبي المستقبل.",
+"بس أتمنى أشوفج بكل نسخة جميلة منه."
+],
+
+[
+"أريدج تعرفين إنج مو وحدج.",
+"أكو قلب دائمًا يتمنى يشوفج بخير."
+],
+
+[
+"يمكن ما أگدر أغير العالم حتى أفرحج.",
+"بس أگدر أحاول أخلي عالمج ألطف."
+],
+
+[
+"لو كان عندي ألف حياة.",
+"بكل حياة راح أبحث عنج."
+],
+
+[
+"أجمل صدفة صارتلي هي معرفتج.",
+"وأجمل أمنية عندي هي بقاءج."
+],
+
+[
+"من بين كل الوجوه، وجهج بقي بقلبي.",
+"ومن بين كل الأسماء، اسمج صار الأقرب."
+],
+
+[
+"أتمنى العمر يمر علينا ببطء.",
+"حتى نلحق نعيش كل التفاصيل الحلوة."
+],
+
+[
+"إذا يوم من الأيام نسيتي شكد إنتِ غالية.",
+"تعالي لقلبي… هو يتذكر دائمًا."
+],
+
+[
+"أريد كل فرحة تجي لج تكون أكبر من اللي تتمنينها.",
+"وأريد كل حزن يمر منج بسرعة."
+],
+
+[
+"إنتِ مو سبب واحد حتى أحبج.",
+"إنتِ أسباب كثيرة اجتمعت بشخص واحد."
+],
+
+[
+"أحبج أكثر مما أگدر أقول.",
+"وأهدأ مما أگدر أظهر."
+],
+
+[
+"حتى أجمل الليالي ناقصة بدون شخص نحبه.",
+"وليلي صار أجمل لأن بيه ذكرتج."
+],
+
+[
+"لو القمر يعرف شكد أحبج.",
+"يمكن يطفئ نوره ويخليج تنورين الليل."
+],
+
+[
+"أريدج تبقين قريبة من قلبي.",
+"مو يوم… مو سنة… دائمًا."
+],
+
+[
+"كل ما أقول أحبج، أحس الكلمة بعدها قليلة.",
+"لأن شعوري أكبر من مجرد كلمة."
+],
+
+[
+"أتمنى الأيام تكون رحيمة وياج.",
+"لأن قلبج يستحق كل الأشياء الجميلة."
+],
+
+[
+"إنتِ الشي اللي ما أريد أخسره.",
+"والشخص اللي ما أريد الأيام تبعده."
+],
+
+[
+"لو عندي مكان واحد أخبي بيه أغلى شيء.",
+"راح أخبيج بقلبي."
+],
+
+[
+"أريد كل سنة من عمرج تكون أجمل.",
+"وأريد أكون موجود حتى أشوفها."
+],
+
+[
+"أحبج حتى بالتفاصيل اللي يمكن ما تنتبهين إلها.",
+"لأن التفاصيل الصغيرة هي اللي خلتج كبيرة بقلبي."
+],
+
+[
+"وجودج مو شيء عادي بالنسبة إلي.",
+"وجودج هو الشي اللي صار يعنيلي الكثير."
+],
+
+[
+"يمكن ما أگدر أوصف كل اللي بداخلي.",
+"بس عيوني وقلبي يعرفون الجواب."
+],
+
+[
+"أريدج تضحكين أكثر مما تبچين.",
+"وتحلمين أكثر مما تخافين."
+],
+
+[
+"لو سألتيني شنو أتمنى من باچر؟",
+"أتمنى يكون بيج."
+],
+
+[
+"أحبج بطريقة ما تحتاج إثبات كل يوم.",
+"لأن قلبي من اختارج، ثبت عليج."
+],
+
+[
+"كل نجمة بالسماء تذكرني بجمالج.",
+"بس ولا نجمة تكدر تنافس وجودج."
+],
+
+[
+"أتمنى يومًا ما تشوفين نفسج بعيوني.",
+"حتى تعرفين شكد إنتِ جميلة عندي."
+],
+
+[
+"إنتِ أجمل شيء صار بدون تخطيط.",
+"وأجمل شيء أتمنى يستمر بدون نهاية."
+],
+
+[
+"الحب مو دائمًا كلام كبير.",
+"أحيانًا هو شخص نتمنى يبقى بخير… وإنتِ هذا الشخص."
+],
+
+[
+"إذا الدنيا صارت ثقيلة يومًا.",
+"أتمنى يكون قلبي مكان ترتاحين بيه."
+],
+
+[
+"ما أريد من الحياة أشياء كثيرة.",
+"أريد بس أشوفج سعيدة وقريبة."
+],
+
+[
+"كل مرة أتعرف عليج أكثر، أحبج أكثر.",
+"وأتمنى أظل أكتشفج حتى آخر العمر."
+],
+
+[
+"أنتِ مو حلم أتمنى أصحى منه.",
+"إنتِ حلم أتمنى أعيشه كل يوم."
+],
+
+[
+"لو عندي فرصة أكتب نهاية واحدة لقصة حياتي.",
+"راح أكتب: وبقيا سوا."
+],
+
+[
+"أحبج لأنج تجعلين قلبي يشعر بالأمان.",
+"وهذا عندي أغلى من كل شيء."
+],
+
+[
+"من كل الأماكن، أحب المكان اللي تكونين بيه.",
+"ومن كل الأيام، أحب اليوم اللي أشوفج بيه."
+],
+
+[
+"أتمنى ما تحتاجين يومًا سبب حتى تبتسمين.",
+"بس إذا احتجتي سبب، أتمنى أكون واحد منه."
+],
+
+[
+"أريدج تعرفين إنج مو عبء على قلبي.",
+"إنتِ أجمل شيء يحمله."
+],
+
+[
+"كل ما أتخيل السنوات القادمة.",
+"أتمنى يكون اسمج جزء منها."
+],
+
+[
+"أحبج لأنج تجعلين البسيط جميل.",
+"وتخلين العادي ذكرى."
+],
+
+[
+"حتى لو تغير كل شيء حولنا.",
+"أتمنى يبقى بين قلوبنا هذا الشعور."
+],
+
+[
+"إنتِ الشخص اللي قلبي اختاره بهدوء.",
+"وبعده ما فكر يختار غيرج."
+],
+
+[
+"لو كل شيء بالدنيا له نهاية.",
+"أتمنى حبنا يكون الاستثناء."
+],
+
+[
+"أريدج تعرفين إن وجودج فرق وياي.",
+"أكثر مما تتصورين."
+],
+
+[
+"كل يوم جديد أحبج بيه أكثر من اليوم اللي قبله.",
+"وهذا الشي الوحيد اللي أتمنى ما يتغير."
+],
+
+[
+"أتمنى أكون سبب أمانج مو سبب خوفج.",
+"وسبب ابتسامتج مو سبب دمعتج."
+],
+
+[
+"لو كان عندي أمنية أرسلها للقمر الليلة.",
+"راح أرسل له: احفظ لي آية."
+],
+
+[
+"إنتِ مو مجرد شخص في حياتي.",
+"إنتِ شعور جميل صار جزءًا مني."
+],
+
+[
+"أريدج تظلين مثل ما إنتِ.",
+"لأن النسخة اللي أحبها هي إنتِ."
+],
+
+[
+"إذا الحب مكان، فأنا مرتاح بمكاني وياج.",
+"وإذا الأمان شخص، فأنا أعرفه."
+],
+
+[
+"أحبج في الصمت مثل ما أحبج بالكلام.",
+"لأن وجودج وحده يحچي عن كل شيء."
+],
+
+[
+"أتمنى كل ليلة تشبه هذه السماء.",
+"هادئة، جميلة، ومليانة نور."
+],
+
+[
+"يمكن ما أگدر أعطيج العالم.",
+"بس أگدر أعطيج قلب يحبج بصدق."
+],
+
+[
+"كلما أشوف القمر أتذكرج.",
+"لأن الاثنين يخلون الليل أجمل."
+],
+
+[
+"أريد كل ذكرياتنا القادمة تكون دافئة.",
+"مثل شعور القلب من يلقى الشخص الصح."
+],
+
+[
+"ما أعرف شلون أشرح مكانج عندي.",
+"بس أعرف إنج مو مثل أي أحد."
+],
+
+[
+"أحبج اليوم بنفس القلب.",
+"وباجر بقلب أكبر."
+],
+
+[
+"إذا مر يوم وشكيتِ بنفسج.",
+"تذكري إن عيني تشوف بيج ألف سبب للجمال."
+],
+
+[
+"أريدج تظلين دائمًا قريبة.",
+"لأن بعض القرب ما ينمل منه."
+],
+
+[
+"أجمل شيء بالحياة مو أن تلقى شخص تحبه.",
+"الأجمل أن تلقى شخص ترتاح له… وإنتِ هذا الشخص."
+],
+
+[
+"لو أگدر أوقف الوقت بلحظة واحدة.",
+"راح أختار لحظة أكون بيها وياج."
+],
+
+[
+"أحبج لأن قلبي هدى من عرفج.",
+"وكأنه أخيرًا لقى مكانه."
+],
+
+[
+"كل الطرق الجميلة تذكرني بيج.",
+"وكل الأشياء الحلوة أتمنى أشاركج بيها."
+],
+
+[
+"ما أريد نهاية للحكاية.",
+"أريد كل يوم يكون بداية جديدة إلنا."
+],
+
+[
+"أنتِ الشي اللي كل ما كبر الوقت، زادت قيمته.",
+"وكل ما عرفتلج أكثر، زاد حبي."
+],
+
+[
+"أتمنى أظل أقول لج أحبج حتى بعد سنين.",
+"وتظلين كل مرة تبتسمين من تسمعينها."
+],
+
+[
+"لو أگدر أختصر المستقبل كله بكلمة.",
+"راح تكون: وياج."
+],
+
+[
+"إنتِ أجمل تفصيل ما كنت أعرف إني أحتاجه.",
+"واليوم ما أتخيل أيامي بدونج."
+],
+
+[
+"كل ليلة لها قمر.",
+"بس قلبي له قمر واحد… إنتِ."
+],
+
+[
+"أريدج تذكرين دائمًا إنج غالية.",
+"مو لأنج عندي فقط… لأنج تستحقين."
+],
+
+[
+"أحبج أكثر من كل رسالة كتبتها.",
+"وأكثر من كل كلمة قدرت أقولها."
+],
+
+[
+"لو كان بيدي أحفظ شيء واحد من الدنيا.",
+"راح أحفظ وجودج."
+],
+
+[
+"أنتِ مو صدفة مرت بحياتي.",
+"أنتِ صدفة تمنيت لو صارت أبكر."
+],
+
+[
+"أتمنى كل صباح يلقى لج سبب جديد للفرح.",
+"وكل ليلة تترك بقلبج طمأنينة."
+],
+
+[
+"أحبج لأنج تخلي قلبي يبتسم قبل وجهي.",
+"وهذا وحده يكفيني."
+],
+
+[
+"لو كان للحب لون، يمكن يكون لون عيونج.",
+"ولو كان له صوت، يمكن يكون صوتج."
+],
+
+[
+"أريد كل ما تكبر الأيام، تكبر محبتنا وياها.",
+"بدون خوف وبدون نهاية."
+],
+
+[
+"إنتِ أجمل شخص أريد أطمئن عليه كل يوم.",
+"وأجمل اسم أحب أشوفه."
+],
+
+[
+"يمكن ما تعرفين شكد أفرح من أشوفج بخير.",
+"بس هذه من أحب الأشياء عندي."
+],
+
+[
+"أريدج تكونين سعيدة حتى لو ما كنت السبب.",
+"بس أتمنى أكون دائمًا قريب من فرحتج."
+],
+
+[
+"من بين ملايين الناس، صرتِ أنتِ الشخص الأقرب.",
+"وهذا الشي ما أريد أخسره."
+],
+
+[
+"أحبج مثل ما تحب السماء نجومها.",
+"دون ضجيج، لكن بكل هذا الجمال."
+],
+
+[
+"إذا سألتيني شنو بعد أريد؟",
+"راح أگول: المزيد من الأيام وياج."
+],
+
+[
+"أريدج تعرفين إن قلبي ما يطلب الكثير.",
+"فقط يريدج بخير."
+],
+
+[
+"كل مرة تنظرين للسماء، تذكري هذا.",
+"أكو قلب هنا يتمنى لج أجمل حياة."
+],
+
+[
+"لو الحب رحلة، أتمنى ما نوصل لنهايتها.",
+"أتمنى نظل نمشي سوا."
+],
+
+[
+"أنتِ أجمل جزء من الحاضر.",
+"وأكثر شخص أتمنى يكون بالمستقبل."
+],
+
+[
+"أحبج بهدوء.",
+"لكن هذا الهدوء يخفي حبًا كبيرًا جدًا."
+],
+
+[
+"كل شيء جميل يبدأ بلحظة.",
+"ولحظتي الجميلة كانت معرفتج."
+],
+
+[
+"أريدج دائمًا تحافظين على قلبج الجميل.",
+"لأنه واحد من الأشياء اللي أحبها بيج."
+],
+
+[
+"حتى لو ما گلتها كل يوم.",
+"تأكدي إن قلبي يقولها عني: أحبج."
+],
+
+[
+"أنتِ أمنية ما طلبتها.",
+"لكنني الآن أتمنى ألا أفقدها."
+],
+
+[
+"إذا كان للسماء قمر.",
+"فقلبي عنده آية."
+],
+
+[
+"أريدج تبقين قريبة مهما تغيرت الأيام.",
+"لأن قربج صار جزءًا من راحتي."
+],
+
+[
+"ما أعرف شنو مكتوب بالمستقبل.",
+"بس أتمنى اسمج يكون بين سطوره."
+],
+
+[
+"أحبج لأنج جعلتي الحياة أدفأ.",
+"وجعلتي قلبي أهدأ."
+],
+
+[
+"آخر شيء أريد أقوله الليلة.",
+"إنج أغلى مما تتصورين."
+],
+
+[
+"وإذا كان لي اختيار واحد من كل هذا العالم.",
+"فقلبي سيختارج إنتِ… كل مرة. 🤍"
+]
+
+];
+
+
+/* =========================================================
+   FINAL MESSAGE SELECTION
+========================================================= */
+
+function prepareFinal(){
+
+    const last=
+        localStorage.getItem(
+            "lastFinalMessage"
+        );
+
+
+    let available=
+        finalMessages.filter(
+            pair =>
+            pair.join("|") !== last
+        );
+
+
+    if(
+        available.length===0
+    ){
+
+        available=
+            [...finalMessages];
+    }
+
+
+    const selected=
+        available[
+            Math.floor(
+                Math.random()*
+                available.length
+            )
+        ];
+
+
+    const key=
+        selected.join("|");
+
+
+    localStorage.setItem(
+        "lastFinalMessage",
+        key
+    );
+
+
+    const final=
+        document.getElementById(
+            "finalMessage"
+        );
+
+
+    /*
+       سطران فقط
+    */
+
+    final.innerHTML=
+        selected[0]+
+        "<br>"+
+        selected[1];
+}
+
+
+/* =========================================================
+   ONLY A FEW HEARTS
+========================================================= */
+
+for(let i=0;i<8;i++){
+
+    const h=
+        document.createElement(
+            "div"
+        );
+
+    h.className="heart";
+
+
+    const symbols=[
+        "♡",
+        "🤍",
+        "💗"
+    ];
+
+
+    h.textContent=
+        symbols[
+            Math.floor(
+                Math.random()*
+                symbols.length
+            )
+        ];
+
+
+    h.style.left=
+        Math.random()*100+"%";
+
+    h.style.bottom="-50px";
+
+    h.style.fontSize=
+        (9+
+        Math.random()*10)+"px";
+
+    h.style.setProperty(
+        "--duration",
+        (13+
+        Math.random()*8)+"s"
+    );
+
+    h.style.animationDelay=
+        Math.random()*12+"s";
+
+
+    document.body.appendChild(h);
+}
+
+
+/* =========================================================
+   INITIAL RANDOM FINAL PREPARATION
+========================================================= */
+
+prepareFinal();
+
+
+setInterval(()=>{if(document.hidden)return;const d=document.createElement('span');d.className='romantic-dust';d.style.left=(15+Math.random()*70)+'vw';d.style.top=(55+Math.random()*35)+'vh';d.style.setProperty('--dx',((Math.random()-.5)*90)+'px');d.style.animationDuration=(4+Math.random()*4)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),8500)},850);
+</script>
+
+
+<style id="final-3d-upgrade">
+/* =========================================================
+   FINAL 3D CINEMATIC UPGRADE
+   - Reliable navigation
+   - True 3D page transitions
+   - Different visual identity for every page
+   - Touch + keyboard friendly
+========================================================= */
+
+:root{
+  --accent:#ff9bc9;
+  --accent2:#c9a7ff;
+  --glass:rgba(255,255,255,.075);
+  --glass-border:rgba(255,255,255,.16);
+}
+
+/* Keep every page in a real 3D scene */
+body{
+  perspective:1800px !important;
+  perspective-origin:50% 50%;
+}
+
+.page{
+  transform-style:preserve-3d !important;
+  backface-visibility:hidden;
+  will-change:transform,opacity,filter;
+  transition:none !important;
+}
+
+/* A cinematic transition layer */
+#routeTransition{
+  position:fixed;
+  inset:0;
+  z-index:99990;
+  pointer-events:none;
+  opacity:0;
+  visibility:hidden;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(255,210,235,.30),transparent 18%),
+    linear-gradient(135deg,rgba(8,4,18,.96),rgba(38,12,39,.94));
+  transform:scale(1.12) rotateX(0deg) translateZ(80px);
+  filter:blur(18px);
+}
+#routeTransition.play{
+  visibility:visible;
+  animation:routeFlash .82s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes routeFlash{
+  0%{opacity:0;transform:scale(1.12) rotateX(0) translateZ(80px);filter:blur(18px)}
+  35%{opacity:.95;transform:scale(1) rotateX(0) translateZ(0);filter:blur(0)}
+  65%{opacity:.72;transform:scale(.98) rotateX(-2deg) translateZ(0)}
+  100%{opacity:0;transform:scale(.84) rotateX(0) translateZ(-40px);filter:blur(8px)}
+}
+
+/* Page-specific atmosphere */
+body.scene-p1 .sky{
+  background:
+    radial-gradient(circle at 50% 20%,rgba(255,180,220,.16),transparent 25%),
+    radial-gradient(circle at 20% 80%,rgba(122,93,255,.12),transparent 32%),
+    linear-gradient(160deg,#080611,#13091c 55%,#05030b);
+}
+body.scene-p2 .sky{
+  background:
+    radial-gradient(circle at 50% 8%,rgba(255,232,177,.20),transparent 24%),
+    radial-gradient(circle at 80% 70%,rgba(78,130,255,.12),transparent 32%),
+    linear-gradient(180deg,#03040b,#081127 58%,#02030a);
+}
+body.scene-p3 .sky{
+  background:
+    radial-gradient(circle at 15% 30%,rgba(255,100,170,.13),transparent 28%),
+    radial-gradient(circle at 85% 65%,rgba(121,94,255,.14),transparent 30%),
+    linear-gradient(145deg,#09040f,#190719 52%,#05030b);
+}
+body.scene-p4 .sky{
+  background:
+    radial-gradient(circle at 50% 50%,rgba(255,197,226,.13),transparent 18%),
+    radial-gradient(circle at 20% 20%,rgba(121,173,255,.12),transparent 28%),
+    linear-gradient(180deg,#05040d,#12091d 60%,#04030a);
+}
+body.scene-p5 .sky{
+  background:
+    radial-gradient(circle at 50% 45%,rgba(255,205,175,.18),transparent 24%),
+    radial-gradient(circle at 10% 80%,rgba(255,116,180,.10),transparent 30%),
+    linear-gradient(180deg,#05030a,#170b18 58%,#05030a);
+}
+body.scene-p6 .sky{
+  background:
+    radial-gradient(circle at 50% 45%,rgba(255,222,235,.18),transparent 23%),
+    radial-gradient(circle at 50% 100%,rgba(255,111,181,.10),transparent 38%),
+    linear-gradient(160deg,#08040d,#170916 50%,#030208);
+}
+
+/* Unique cards */
+body.scene-p1 #p1 .content{
+  transform:translateZ(50px);
+}
+body.scene-p1 #p1 .content::before{
+  content:"✦  رسالة خاصة  ✦";
+  display:block;
+  margin-bottom:18px;
+  color:rgba(255,220,236,.62);
+  font-size:11px;
+  letter-spacing:4px;
+}
+
+body.scene-p2 #p2 .content{
+  padding:34px 26px;
+  border:1px solid rgba(255,231,190,.16);
+  border-radius:34px;
+  background:linear-gradient(145deg,rgba(255,248,225,.075),rgba(80,100,180,.045));
+  box-shadow:0 35px 100px rgba(0,0,0,.34),inset 0 1px rgba(255,255,255,.1);
+  backdrop-filter:blur(24px);
+  transform:translateZ(65px) rotateY(-2deg);
+}
+
+body.scene-p3 #p3 .content{
+  width:min(720px,91vw);
+  padding:34px 25px;
+  border-radius:40px 18px 40px 18px;
+  border:1px solid rgba(255,183,215,.18);
+  background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,95,170,.045));
+  box-shadow:0 40px 110px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.1);
+  transform:translateZ(60px) rotateX(1deg);
+  backdrop-filter:blur(25px);
+}
+
+body.scene-p4 #p4 .content{
+  transform:translateZ(90px);
+}
+body.scene-p4 .memory-copy{
+  margin-top:22px;
+  padding:18px 25px;
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.045);
+  box-shadow:0 25px 70px rgba(0,0,0,.3);
+  backdrop-filter:blur(18px);
+}
+
+body.scene-p5 #p5 .content{
+  transform:translateZ(75px);
+}
+body.scene-p5 #typing{
+  border-radius:30px !important;
+  border:1px solid rgba(255,221,233,.22) !important;
+  background:
+    linear-gradient(145deg,rgba(255,250,245,.10),rgba(255,110,170,.035)) !important;
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.42),
+    inset 0 1px rgba(255,255,255,.11),
+    0 0 55px rgba(255,170,200,.08) !important;
+  backdrop-filter:blur(28px) !important;
+  transform:translateZ(20px);
+}
+
+body.scene-p6 .final-content{
+  padding:35px 28px;
+  border-radius:38px;
+  border:1px solid rgba(255,225,238,.18);
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,110,175,.035));
+  box-shadow:0 40px 120px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.1);
+  backdrop-filter:blur(28px);
+  transform:translateZ(85px);
+}
+
+/* Make controls unmistakably clickable */
+button,
+#memoryOrbit,
+[role="button"]{
+  touch-action:manipulation !important;
+  -webkit-user-select:none;
+  user-select:none;
+}
+button:focus-visible,
+#memoryOrbit:focus-visible{
+  outline:2px solid rgba(255,190,220,.8);
+  outline-offset:5px;
+}
+
+/* Transition directions */
+.page.route-enter-right{
+  display:flex !important;
+  opacity:0;
+  transform:translate3d(115%,0,-220px) rotateY(-28deg) rotateX(5deg) scale(.82) !important;
+  filter:blur(14px);
+}
+.page.route-enter-left{
+  display:flex !important;
+  opacity:0;
+  transform:translate3d(-115%,0,-220px) rotateY(28deg) rotateX(5deg) scale(.82) !important;
+  filter:blur(14px);
+}
+.page.route-enter-depth{
+  display:flex !important;
+  opacity:0;
+  transform:translate3d(0,0,-650px) rotateX(16deg) rotateY(-10deg) scale(.55) !important;
+  filter:blur(18px);
+}
+.page.route-enter-final{
+  display:flex !important;
+  opacity:0;
+  transform:translate3d(0,90px,-300px) rotateX(-18deg) scale(.72) !important;
+  filter:blur(14px);
+}
+.page.route-show{
+  opacity:1 !important;
+  transform:translate3d(0,0,0) rotateX(0) rotateY(0) scale(1) !important;
+  filter:blur(0) !important;
+  transition:
+    transform 1.05s cubic-bezier(.16,1,.3,1),
+    opacity .78s ease,
+    filter .9s ease !important;
+}
+.page.route-leave{
+  opacity:0 !important;
+  transform:translate3d(-75px,-30px,-300px) rotateY(18deg) rotateX(-7deg) scale(.82) !important;
+  filter:blur(14px) !important;
+  transition:
+    transform .72s cubic-bezier(.7,0,.84,.25),
+    opacity .55s ease,
+    filter .55s ease !important;
+}
+
+@media(max-width:600px){
+  .page.route-enter-right{
+    transform:translate3d(105%,0,-160px) rotateY(-18deg) scale(.86) !important;
+  }
+  .page.route-enter-left{
+    transform:translate3d(-105%,0,-160px) rotateY(18deg) scale(.86) !important;
+  }
+  body.scene-p2 #p2 .content,
+  body.scene-p3 #p3 .content,
+  body.scene-p6 .final-content{
+    max-width:92vw;
+    padding:24px 17px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .page.route-enter-right,
+  .page.route-enter-left,
+  .page.route-enter-depth,
+  .page.route-enter-final,
+  .page.route-leave{
+    transform:scale(.98) !important;
+    filter:none !important;
+  }
+}
+</style>
+
+<div id="routeTransition" aria-hidden="true"></div>
+
+<script id="reliable-navigation-3d">
+(function(){
+  "use strict";
+
+  const order = ["p1","p2","p3","p4","p5","p6"];
+  let locked = false;
+  let activeId = document.querySelector(".page.active")?.id || "p1";
+
+  function page(id){ return document.getElementById(id); }
+
+  function setScene(id){
+    document.body.classList.remove(...order.map(x=>"scene-"+x));
+    document.body.classList.add("scene-"+id);
+    document.body.dataset.currentPage = id;
+  }
+
+  function flash(){
+    const layer = document.getElementById("routeTransition");
+    if(!layer) return;
+    layer.classList.remove("play");
+    void layer.offsetWidth;
+    layer.classList.add("play");
+    setTimeout(()=>layer.classList.remove("play"),900);
+  }
+
+  function progress(id){
+    const i = order.indexOf(id);
+    document.querySelectorAll(".progress .dot").forEach((dot,n)=>{
+      dot.classList.toggle("on", n <= i);
+    });
+  }
+
+  window.go = function(from,to){
+    const oldPage = page(from) || page(activeId);
+    const newPage = page(to);
+    if(!newPage || oldPage === newPage || locked) return false;
+
+    locked = true;
+    const fromIndex = order.indexOf(oldPage?.id || activeId);
+    const toIndex = order.indexOf(to);
+
+    oldPage?.classList.remove("route-show");
+    oldPage?.classList.add("route-leave");
+
+    newPage.classList.remove("active","fade-out","route-show","route-leave",
+      "route-enter-right","route-enter-left","route-enter-depth","route-enter-final");
+
+    let enterClass = "route-enter-right";
+    if(toIndex < fromIndex) enterClass = "route-enter-left";
+    if(to === "p5") enterClass = "route-enter-depth";
+    if(to === "p6") enterClass = "route-enter-final";
+
+    newPage.classList.add(enterClass);
+    newPage.classList.add("active");
+    setScene(to);
+    progress(to);
+    flash();
+
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{
+        newPage.classList.remove(enterClass);
+        newPage.classList.add("route-show");
+      });
+    });
+
+    setTimeout(()=>{
+      oldPage?.classList.remove("active","fade-out","route-leave","route-show");
+      newPage.classList.remove("route-show");
+      newPage.classList.add("active");
+      activeId = to;
+      locked = false;
+    },1150);
+
+    return true;
+  };
+
+  window.continueJourney = function(){
+    return window.go("p1","p2");
+  };
+
+  window.skipToPoem = function(){
+    document.body.classList.add("fast-route");
+    if(typeof window.selectPoem === "function") window.selectPoem();
+
+    const moved = window.go("p1","p5");
+    if(moved){
+      setTimeout(()=>{
+        if(typeof window.startRomantic === "function") window.startRomantic();
+      },650);
+    }
+    return moved;
+  };
+
+  /* Remove broken/duplicate inline handlers and bind everything directly. */
+  document.querySelectorAll("[onclick]").forEach(el=>el.removeAttribute("onclick"));
+
+  const bind = (selector, fn) => {
+    document.querySelectorAll(selector).forEach(el=>{
+      el.addEventListener("click", e=>{
+        e.preventDefault();
+        e.stopPropagation();
+        fn(e);
+      });
+    });
+  };
+
+  bind("#p1 .nav-duo button:first-child", window.continueJourney);
+  bind("#p1 .nav-duo .shortcut", window.skipToPoem);
+  bind("#p2 button", ()=>window.go("p2","p3"));
+  bind("#p3 button", ()=>window.go("p3","p4"));
+
+  /* Re-bind the memory portal without touching its existing visual code. */
+  const orbit = document.getElementById("memoryOrbit");
+  if(orbit){
+    const cleanOrbit = orbit.cloneNode(true);
+    orbit.replaceWith(cleanOrbit);
+    cleanOrbit.addEventListener("click", e=>{
+      e.preventDefault();
+      e.stopPropagation();
+      if(cleanOrbit.dataset.opened === "1") return;
+      cleanOrbit.dataset.opened = "1";
+      cleanOrbit.classList.add("portal-open");
+
+      const r = cleanOrbit.getBoundingClientRect();
+      const burst = document.createElement("div");
+      burst.className = "memory-burst";
+      burst.style.left = (r.left+r.width/2)+"px";
+      burst.style.top = (r.top+r.height/2)+"px";
+      document.body.appendChild(burst);
+      setTimeout(()=>burst.remove(),1600);
+
+      setTimeout(()=>{
+        if(typeof window.selectPoem === "function") window.selectPoem();
+        const moved = window.go("p4","p5");
+        if(moved){
+          setTimeout(()=>{
+            if(typeof window.startRomantic === "function") window.startRomantic();
+          },650);
+        }
+      },520);
+    });
+    cleanOrbit.addEventListener("keydown", e=>{
+      if(e.key==="Enter" || e.key===" "){
+        e.preventDefault();
+        cleanOrbit.click();
+      }
+    });
+  }
+
+  /* Add a small always-visible route hint on touch devices. */
+  document.querySelectorAll("button").forEach(btn=>{
+    btn.addEventListener("pointerdown",()=>{
+      btn.style.setProperty("--press","1");
+    });
+    btn.addEventListener("pointerup",()=>{
+      btn.style.removeProperty("--press");
+    });
+  });
+
+  /* Initial scene */
+  setScene(activeId);
+  progress(activeId);
+
+})();
+</script>
+
+
+<style id="luxury-atmosphere">
+/* =========================================================
+   LUXURY CINEMATIC ATMOSPHERE
+========================================================= */
+body{
+  overflow:hidden;
+  background:#030208 !important;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:-25%;
+  z-index:-4;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,120,190,.13),transparent 24%),
+    radial-gradient(circle at 80% 70%,rgba(125,95,255,.12),transparent 28%);
+  animation:ambientDrift 18s ease-in-out infinite alternate;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg,transparent 0 43%,rgba(255,255,255,.025) 50%,transparent 57%);
+  background-size:260% 260%;
+  animation:silkMove 13s ease-in-out infinite;
+}
+@keyframes ambientDrift{
+  0%{transform:translate3d(-2%,-1%,0) scale(1)}
+  100%{transform:translate3d(3%,2%,0) scale(1.12)}
+}
+@keyframes silkMove{
+  0%,100%{background-position:0% 50%;opacity:.25}
+  50%{background-position:100% 50%;opacity:.7}
+}
+
+/* Different cinematic background per page */
+body.scene-p1{
+  --scene-a:#ff77b7;--scene-b:#7f63ff;--scene-c:#080412;
+}
+body.scene-p2{
+  --scene-a:#ffd68a;--scene-b:#4c8dff;--scene-c:#020614;
+}
+body.scene-p3{
+  --scene-a:#ff76b7;--scene-b:#a66dff;--scene-c:#09030d;
+}
+body.scene-p4{
+  --scene-a:#73d7ff;--scene-b:#b47aff;--scene-c:#030711;
+}
+body.scene-p5{
+  --scene-a:#ffbd8a;--scene-b:#ff6da9;--scene-c:#08030a;
+}
+body.scene-p6{
+  --scene-a:#ffd5eb;--scene-b:#b18cff;--scene-c:#05020a;
+}
+
+body.scene-p1 .sky,
+body.scene-p2 .sky,
+body.scene-p3 .sky,
+body.scene-p4 .sky,
+body.scene-p5 .sky,
+body.scene-p6 .sky{
+  background:
+    radial-gradient(circle at 50% 20%,color-mix(in srgb,var(--scene-a) 24%,transparent),transparent 25%),
+    radial-gradient(circle at 82% 72%,color-mix(in srgb,var(--scene-b) 18%,transparent),transparent 31%),
+    linear-gradient(145deg,var(--scene-c),#08050e 60%,#020207);
+  transition:background 1.5s ease;
+}
+
+/* Large soft cinematic light blooms */
+.scene-orb{
+  position:fixed;
+  width:34vw;height:34vw;
+  max-width:480px;max-height:480px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+  filter:blur(35px);
+  opacity:.13;
+  background:radial-gradient(circle,var(--scene-a),transparent 68%);
+  animation:orbFloat 11s ease-in-out infinite alternate;
+}
+.scene-orb.a{left:-10vw;top:15vh}
+.scene-orb.b{right:-10vw;bottom:5vh;animation-delay:-4s}
+@keyframes orbFloat{
+  from{transform:translate3d(0,0,0) scale(.92)}
+  to{transform:translate3d(4vw,-3vh,0) scale(1.12)}
+}
+
+/* Premium page content treatment */
+.page .content,
+.final-content{
+  position:relative;
+}
+.page .content::after,
+.final-content::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.10),transparent);
+  background-size:220% 100%;
+  animation:glassShine 7s ease-in-out infinite;
+  opacity:.5;
+}
+@keyframes glassShine{
+  0%,55%{background-position:180% 0}
+  75%,100%{background-position:-20% 0}
+}
+
+/* Make buttons feel physical */
+button{
+  position:relative;
+  overflow:hidden;
+  transform:translateZ(20px);
+  transition:transform .35s cubic-bezier(.16,1,.3,1),
+             box-shadow .35s ease,
+             border-color .35s ease !important;
+}
+button::before{
+  content:"";
+  position:absolute;
+  width:120px;height:120px;
+  left:var(--mx,50%);top:var(--my,50%);
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.25),transparent 68%);
+  opacity:0;
+  transition:opacity .25s ease;
+  pointer-events:none;
+}
+button:hover{
+  transform:translateY(-4px) translateZ(30px) scale(1.025);
+  box-shadow:0 18px 45px rgba(0,0,0,.32),0 0 35px rgba(255,155,201,.12);
+}
+button:hover::before{opacity:1}
+button:active{
+  transform:translateY(1px) translateZ(10px) scale(.985);
+}
+
+/* Page entrance adds a subtle depth breathing effect */
+.page.route-show .content,
+.page.route-show .final-content{
+  animation:contentReveal 1.1s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes contentReveal{
+  0%{opacity:0;transform:translateZ(-60px) scale(.92)}
+  55%{opacity:1}
+  100%{opacity:1;transform:translateZ(0) scale(1)}
+}
+
+/* Star-field tint changes with the scene */
+.star{transition:opacity 1.3s ease,box-shadow 1.3s ease}
+body.scene-p2 .star{box-shadow:0 0 8px rgba(190,215,255,.8)}
+body.scene-p4 .star{box-shadow:0 0 8px rgba(120,215,255,.75)}
+body.scene-p5 .star{box-shadow:0 0 8px rgba(255,190,150,.75)}
+body.scene-p6 .star{box-shadow:0 0 10px rgba(255,220,240,.9)}
+
+/* Smooth progress indicator */
+.progress .dot{
+  transition:transform .55s cubic-bezier(.16,1,.3,1),
+             opacity .5s ease,
+             box-shadow .5s ease;
+}
+.progress .dot.on{
+  transform:scale(1.22);
+}
+
+/* Typing box: calm, elegant reading pace */
+body.scene-p5 #typing{
+  min-height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+body.scene-p5 #typedText{
+  line-height:2.25 !important;
+  text-shadow:0 0 24px rgba(255,180,205,.12);
+}
+body.scene-p5 .cursor{
+  animation:cursorBreath 1.1s ease-in-out infinite !important;
+}
+@keyframes cursorBreath{
+  0%,100%{opacity:.2}
+  50%{opacity:1}
+}
+
+/* Transition veil */
+#routeTransition{
+  background:
+    radial-gradient(circle at 50% 50%,color-mix(in srgb,var(--scene-a) 22%,transparent),transparent 24%),
+    radial-gradient(circle at 20% 80%,color-mix(in srgb,var(--scene-b) 14%,transparent),transparent 30%),
+    linear-gradient(135deg,#030208f5,#170817f2) !important;
+}
+</style>
+
+
+<script id="luxury-atmosphere-js">
+(function(){
+  const root=document.body;
+
+  ["a","b"].forEach(cls=>{
+    const o=document.createElement("div");
+    o.className="scene-orb "+cls;
+    root.appendChild(o);
+  });
+
+  /* Replace the transition veil with a fresh color pulse each time. */
+  const veil=document.getElementById("routeTransition");
+  if(veil){
+    const observer=new MutationObserver(()=>{
+      if(veil.classList.contains("play")){
+        veil.style.setProperty("--scene-a",
+          getComputedStyle(root).getPropertyValue("--scene-a"));
+        veil.style.setProperty("--scene-b",
+          getComputedStyle(root).getPropertyValue("--scene-b"));
+      }
+    });
+    observer.observe(veil,{attributes:true,attributeFilter:["class"]});
+  }
+})();
+</script>
+
+</body>
+</html>
